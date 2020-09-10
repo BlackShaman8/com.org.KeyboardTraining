@@ -12,13 +12,13 @@ public class User {
     private Long id;
     private String role;
     private String login;
-    private Long password;
+    private String password;
 
 
     public User(){
     }
 
-    public User(String role, String login, Long password) {
+    public User(String role, String login, String password) {
         this.role = role;
         this.login = login;
         this.password = password;
@@ -40,11 +40,11 @@ public class User {
         this.login = login;
     }
 
-    public Long getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(Long password) {
+    public void setPassword(String password) {
         this.password = password;
     }
 
