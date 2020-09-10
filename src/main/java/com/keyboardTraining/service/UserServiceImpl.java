@@ -1,16 +1,17 @@
 package com.keyboardTraining.service;
 
 import com.keyboardTraining.model.User;
+import com.keyboardTraining.repos.UserRepos;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService{
-    private final UserService userService;
+    private final UserRepos userRepos;
 
-    public UserServiceImpl(UserService userService) {
-        this.userService = userService;
+    public UserServiceImpl(UserRepos userRepos) {
+        this.userRepos = userRepos;
     }
 
     @Override

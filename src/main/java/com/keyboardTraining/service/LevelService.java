@@ -11,5 +11,5 @@ public interface LevelService {
     public List<Level> getAll();
     public Level getLevel(Long id);
     public void deleteLevelId(Long id);
-    public int count();
+    public Long count();
 }

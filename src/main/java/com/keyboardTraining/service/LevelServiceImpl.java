@@ -2,9 +2,11 @@ package com.keyboardTraining.service;
 
 import com.keyboardTraining.model.Level;
 import com.keyboardTraining.repos.LevelRepos;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class LevelServiceImpl implements  LevelService{
     private final LevelRepos levelRepos;
 
@@ -43,7 +45,8 @@ public class LevelServiceImpl implements  LevelService{
     }
 
     @Override
-    public int count() {
-        return 0;
+    public Long count() {
+
+        return null;
     }
 }
