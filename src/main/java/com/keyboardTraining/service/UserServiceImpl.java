@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     private final UserRepos userRepos;
 
     public UserServiceImpl(UserRepos userRepos) {
@@ -42,14 +42,17 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User getUser(String login) {
-        User user= userRepos.findUserByLogin(login);
+        User user = userRepos.findUserByLogin(login);
         return user;
     }
 
     @Override
     public User getUser(User searchUser) {
-        User user= userRepos.findUserByLogin(searchUser.getLogin());
-        return user;
+        User user = userRepos.findUserByLogin(searchUser.getLogin());
+        if (searchUser.getRole() == user.getRole())
+            return user;
+        else
+            return null;
     }
 
     @Override
