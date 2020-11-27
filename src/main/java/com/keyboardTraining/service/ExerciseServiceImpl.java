@@ -1,41 +1,41 @@
 package com.keyboardTraining.service;
 
-import com.keyboardTraining.model.Level;
+import com.keyboardTraining.model.Exercise;
 import com.keyboardTraining.repos.LevelRepos;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class LevelServiceImpl implements  LevelService{
+public class ExerciseServiceImpl implements ExerciseService {
     private final LevelRepos levelRepos;
 
-    public LevelServiceImpl(LevelRepos levelRepos) {
+    public ExerciseServiceImpl(LevelRepos levelRepos) {
         this.levelRepos = levelRepos;
     }
 
     @Override
-    public Level addLevel(Level level) {
+    public Exercise addLevel(Exercise exercise) {
         return null;
     }
 
     @Override
-    public void deleteLevel(Level level) {
+    public void deleteLevel(Exercise exercise) {
 
     }
 
     @Override
-    public Level changeLevel(Level level) {
+    public Exercise changeLevel(Exercise exercise) {
         return null;
     }
 
     @Override
-    public List<Level> getAll() {
+    public List<Exercise> getAll() {
         return null;
     }
 
     @Override
-    public Level getLevel(Long id) {
+    public Exercise getLevel(Long id) {
         return null;
     }
 

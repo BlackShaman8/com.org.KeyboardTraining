@@ -6,18 +6,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Level {
+public class Exercise {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private int levelOfDifficulty;
+    private String levelName;
     private String exercise;
 
-    public Level() {
+    public Exercise() {
     }
 
-    public Level(int levelOfDifficulty, String exercise) {
+    public Exercise(int levelOfDifficulty, String levelName, String exercise) {
         this.levelOfDifficulty = levelOfDifficulty;
+        this.levelName = levelName;
         this.exercise = exercise;
     }
 
@@ -35,6 +37,14 @@ public class Level {
 
     public void setLevelOfDifficulty(int levelOfDifficulty) {
         this.levelOfDifficulty = levelOfDifficulty;
+    }
+
+    public String getLevelName() {
+        return levelName;
+    }
+
+    public void setLevelName(String levelName) {
+        this.levelName = levelName;
     }
 
     public String getExercise() {
