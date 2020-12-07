@@ -21,26 +21,26 @@ public class AdminController {
         this.userService = userService;
     }
 
-    @GetMapping("/admin")
+    @GetMapping("/asdf")
     public String userList(Model model) {
         model.addAttribute("allUsers", userService.allUsers());
-        return "admin";
+        return "asdf";
     }
 
-    @PostMapping("/admin")
+    @PostMapping("/asdf")
     public String  deleteUser(@RequestParam(required = true, defaultValue = "" ) Long userId,
                               @RequestParam(required = true, defaultValue = "" ) String action,
                               Model model) {
         if (action.equals("delete")){
             userService.deleteUser(userId);
         }
-        return "redirect:/admin";
+        return "redirect:/asdf";
     }
 
-    @GetMapping("/admin/gt/{userId}")
+    @GetMapping("/asdf/gt/{userId}")
     public String  gtUser(@PathVariable("userId") Long userId, Model model) {
         model.addAttribute("allUsers", userService.usergtList(userId));
-        return "admin.jsp";
+        return "asdf.jsp";
     }
 
 

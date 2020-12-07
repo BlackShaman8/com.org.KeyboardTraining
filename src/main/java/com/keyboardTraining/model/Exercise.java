@@ -1,27 +1,19 @@
 package com.keyboardTraining.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Exercise {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private int levelOfDifficulty;
-    private String levelName;
+    @ManyToOne(fetch = FetchType.EAGER)
+    private DifficultyLevel myDifficultyLevel;
     private String exercise;
 
     public Exercise() {
     }
 
-    public Exercise(int levelOfDifficulty, String levelName, String exercise) {
-        this.levelOfDifficulty = levelOfDifficulty;
-        this.levelName = levelName;
-        this.exercise = exercise;
-    }
 
     public Long getId() {
         return id;
@@ -31,20 +23,12 @@ public class Exercise {
         this.id = id;
     }
 
-    public int getLevelOfDifficulty() {
-        return levelOfDifficulty;
+    public DifficultyLevel getMyDifficultyLevel() {
+        return myDifficultyLevel;
     }
 
-    public void setLevelOfDifficulty(int levelOfDifficulty) {
-        this.levelOfDifficulty = levelOfDifficulty;
-    }
-
-    public String getLevelName() {
-        return levelName;
-    }
-
-    public void setLevelName(String levelName) {
-        this.levelName = levelName;
+    public void setMyDifficultyLevel(DifficultyLevel myDifficultyLevel) {
+        this.myDifficultyLevel = myDifficultyLevel;
     }
 
     public String getExercise() {

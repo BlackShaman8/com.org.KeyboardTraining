@@ -28,7 +28,7 @@
                     <a href="/user/userList">Общая статистика</a>
                 </li>
                 <li>
-                    <a href="/admin">Обучение</a>
+                    <a href="/asdf">Обучение</a>
                 </li>
                 <li>
                     <a href="logout">Выход</a>
@@ -47,16 +47,16 @@
                     <a href="/admin/trainingParameters">Редактировать учетную запись</a>
                 </li>
                 <li>
-                    <a href="/admin/download">Просмотр упражнений</a>
+                    <a href="/exercises">Просмотр упражнений</a>
                 </li>
                 <li>
                     <a href="/admin/userList">Общая статистика</a>
                 </li>
                 <li>
-                    <a href="/admin">Управление учетными записями</a>
+                    <a href="/asdf">Управление учетными записями</a>
                 </li>
                 <li>
-                    <a href="/admin/statistic">Настройка уровней сложности</a>
+                    <a href="/difficultyLevels">Настройка уровней сложности</a>
                 </li>
                 <li>
                     <a href="logout">Выход</a>
@@ -64,7 +64,6 @@
             </ul>
         </section>
     </sec:authorize>
-    <a href="/admin">Настройка уровней сложности</a>
 </div>
 </body>
 </html>

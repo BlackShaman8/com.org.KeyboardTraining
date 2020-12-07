@@ -3,6 +3,7 @@ package com.keyboardTraining.controllers;
 import com.keyboardTraining.model.User;
 import com.keyboardTraining.security.SecurityConfig;
 import com.keyboardTraining.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -17,8 +18,10 @@ import java.util.Map;
 
 @Controller
 public class UserController {
+
     private final UserService userService;
 
+    @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
