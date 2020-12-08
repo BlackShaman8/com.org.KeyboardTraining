@@ -1,5 +1,6 @@
 package com.keyboardTraining.service;
 
+import com.keyboardTraining.model.DifficultyLevel;
 import com.keyboardTraining.model.Exercise;
 import com.keyboardTraining.model.Role;
 import com.keyboardTraining.model.User;
@@ -61,5 +62,10 @@ public class ExerciseServiceImpl implements ExerciseService {
 //            list.add(exercises.get(i).getId());
 //        }
         return list;
+    }
+
+    public List<Exercise> getExercisesById(Long id){
+
+        return exerciseRepos.findExercisesByMyDifficultyLevel_Id(id);
     }
 }

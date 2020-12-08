@@ -102,3 +102,54 @@ function tick() {
     sec++;
     document.getElementById("speed_counter").innerHTML = count_right * 60 / sec;
 }
+
+
+//Выбор параметров тренировки
+
+
+
+function changeSelect(){
+    let exerciseSelection = document.querySelector('.exerciseSelection');
+    var select=document.getElementById("difficultyLevel");
+    var value=select.value;
+exerciseSelection.innerHTML='';
+    if(value==1) {
+        exerciseSelection.insertAdjacentHTML("afterbegin",
+            '<select><c:forEach items="${exercisesLevel1}" var="exercise"> <option>${exercise.exercise}</option> </c:forEach></select>');
+    }
+    if(value==2)
+        exerciseSelection.insertAdjacentHTML("afterbegin",
+            '<select><c:forEach items="${exercisesLevel2}" var="exercise"> <option>${exercise.exercise}</option> </c:forEach></select>');
+    if(value==3)
+        exerciseSelection.insertAdjacentHTML("afterbegin",
+            '<select><c:forEach items="${exercisesLevel3}" var="exercise"> <option>${exercise.exercise}</option> </c:forEach></select>');
+    if(value==4)
+        exerciseSelection.insertAdjacentHTML("afterbegin",
+            '<select><c:forEach items="${exercisesLevel4}" var="exercise"> <option>${exercise.exercise}</option> </c:forEach></select>');
+}
+
+function restrictionOfEnteredCharacters(element,event){
+    var zone0=[82,70,86,84,71,66,89,72,78,85,74,77,32];
+    var zone1=[69,68,67,73,75,188];
+    var zone2=[87,83,88,79,76,190];
+    var zone3=[81,65,90,219,221,222];
+    var select=document.getElementById("difficultyLevel");
+    var value=select.value;
+    if(value==1){
+        if(zone0.indexOf(event.keyCode)== -1)
+            return false;
+    }
+    if(value==2){
+        if(zone0.indexOf(event.keyCode)== -1 && zone1.indexOf(event.keyCode)==-1)
+            return false;
+    }
+    if(value==3){
+        if(zone0.indexOf(event.keyCode)== -1 && zone1.indexOf(event.keyCode)==-1 && zone2.indexOf(event.keyCode)==-1)
+            return false;
+    }
+    if(value==4){
+        if(zone0.indexOf(event.keyCode)== -1 && zone1.indexOf(event.keyCode)==-1 && zone2.indexOf(event.keyCode)==-1 && zone3.indexOf(event.keyCode)==-1)
+            return false;
+    }
+
+}

@@ -1,29 +1,30 @@
 package com.keyboardTraining.controllers;
 
+import com.keyboardTraining.model.Exercise;
 import com.keyboardTraining.model.User;
-import com.keyboardTraining.security.SecurityConfig;
+import com.keyboardTraining.service.DifficultyLevelServiceImpl;
+import com.keyboardTraining.service.ExerciseServiceImpl;
 import com.keyboardTraining.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import java.security.Security;
 import java.util.Map;
 
 @Controller
 public class UserController {
 
     private final UserService userService;
+    private final ExerciseServiceImpl exerciseService;
+    private final DifficultyLevelServiceImpl difficultyLevelService;
 
     @Autowired
-    public UserController(UserService userService) {
+    public UserController(UserService userService, ExerciseServiceImpl exerciseService, DifficultyLevelServiceImpl difficultyLevelService) {
         this.userService = userService;
+        this.exerciseService = exerciseService;
+        this.difficultyLevelService = difficultyLevelService;
     }
 
     @GetMapping("/user/trainingParameters")
@@ -32,6 +33,12 @@ public class UserController {
         String name = auth.getName();//get logged in username
         User user=(User)userService.loadUserByUsername(name);
         model.put("user",user);
+        model.put("allDifficultyLevel",difficultyLevelService.getAll());
+        model.put("allExercises",exerciseService.getAll());
+        model.put("exercisesLevel1",exerciseService.getExercisesById(1L));
+        model.put("exercisesLevel2",exerciseService.getExercisesById(2L));
+        model.put("exercisesLevel3",exerciseService.getExercisesById(3L));
+        model.put("exercisesLevel4",exerciseService.getExercisesById(4L));
         return "trainingParameters";
     }
 

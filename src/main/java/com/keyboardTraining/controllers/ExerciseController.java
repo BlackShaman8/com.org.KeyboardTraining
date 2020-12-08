@@ -21,9 +21,10 @@ public class ExerciseController {
     @GetMapping("/exercises")
     public String getAllExercise(Model model) {
         model.addAttribute("allExercise", exerciseService.getAll());
-        model.addAttribute("allDifficultyLevels",exerciseService.getAllDifficultyLevels());
+        model.addAttribute("allDifficultyLevels", exerciseService.getAllDifficultyLevels());
         return "exercises";
     }
+
     @GetMapping("/difficultyLevels")
     public String getAllDifficultyLevels(Model model) {
         model.addAttribute("allDifficultyLevel", difficultyLevelService.getAll());
@@ -42,37 +43,22 @@ public class ExerciseController {
     }
 
     @PostMapping("/createExercise")
-    public String createNewExercise(@RequestParam String difficultyLevel, @RequestParam String exercise,
-                                    @RequestParam(required = true, defaultValue = "") String action) {
-        if(action.equals("create")) {
-            Exercise ex = new Exercise();
-            ex.setMyDifficultyLevel(difficultyLevelService.getDifficultyLevel(Long.parseLong(difficultyLevel)));
-            ex.setExercise(exercise);
-            exerciseService.saveExercise(ex);
-            return "redirect:/exercises";
-        }else if(action.equals("back")){
-            return "redirect:/exercises";
-        }
-        return "createExercise";
+    public String createNewExercise(@RequestParam String difficultyLevel, @RequestParam String exercise) {
+        Exercise ex = new Exercise();
+        ex.setMyDifficultyLevel(difficultyLevelService.getDifficultyLevel(Long.parseLong(difficultyLevel)));
+        ex.setExercise(exercise);
+        exerciseService.saveExercise(ex);
+        return "redirect:/exercises";
     }
 
     @PostMapping("/exercises")
-    public String postExercise(@RequestParam String exerciseId,
-                               @RequestParam(required = true, defaultValue = "") String action){
-        if(action.equals("delete")) {
-            exerciseService.deleteExerciseId(Long.parseLong(exerciseId));
-            return "redirect:/exercises";
-        }
-        else if(action.equals("create")){
-            return "createExercise";
-        }
-        else{
-            return "index";
-        }
+    public String postExercise(@RequestParam String exerciseId) {
+        exerciseService.deleteExerciseId(Long.parseLong(exerciseId));
+        return "redirect:/exercises";
     }
 
     @PostMapping("/difficultyLevels")
-    public String postAllDifficultyLevels(@RequestParam(required = true, defaultValue = "") Long difficultyLevelId,Model model) {
+    public String postAllDifficultyLevels(@RequestParam(required = true, defaultValue = "") Long difficultyLevelId, Model model) {
         model.addAttribute("difficultyLevel", difficultyLevelService.getDifficultyLevel(difficultyLevelId));
         return "editDifficultyLevel";
     }
@@ -84,17 +70,16 @@ public class ExerciseController {
                                           @RequestParam String maxNumberOfErrors,
                                           @RequestParam String pressingTime,
                                           @RequestParam(required = true, defaultValue = "") String action) {
-       if(action.equals("change")){
-           DifficultyLevel difficultyLevel = difficultyLevelService.getDifficultyLevel(Long.parseLong(difficultyLevelId));
-           difficultyLevel.setMinLength(Integer.parseInt(minLength));
-           difficultyLevel.setMaxLength(Integer.parseInt(maxLength));
-           difficultyLevel.setMaxNumberOfErrors(Integer.parseInt(maxNumberOfErrors));
-           difficultyLevel.setPressingTime(Double.parseDouble(pressingTime));
-           difficultyLevelService.changeDifficultyLevel(difficultyLevel);
-       }
-       else if(action.equals("back")){
-           return "redirect:/difficultyLevels";
-       }
+        if (action.equals("change")) {
+            DifficultyLevel difficultyLevel = difficultyLevelService.getDifficultyLevel(Long.parseLong(difficultyLevelId));
+            difficultyLevel.setMinLength(Integer.parseInt(minLength));
+            difficultyLevel.setMaxLength(Integer.parseInt(maxLength));
+            difficultyLevel.setMaxNumberOfErrors(Integer.parseInt(maxNumberOfErrors));
+            difficultyLevel.setPressingTime(Double.parseDouble(pressingTime));
+            difficultyLevelService.changeDifficultyLevel(difficultyLevel);
+        } else if (action.equals("back")) {
+            return "redirect:/difficultyLevels";
+        }
 
 
         return "redirect:/difficultyLevels";

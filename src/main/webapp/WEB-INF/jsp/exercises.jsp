@@ -16,27 +16,18 @@
     <c:forEach items="${allExercise}" var="exercise">
             <tr>
                 <td>${exercise.id}</td>
-                <td>${exercise.myDifficultyLevel.id+1}</td>
+                <td>${exercise.myDifficultyLevel.id}</td>
                 <td>${exercise.exercise}</td>
                 <td>
                     <form action="${pageContext.request.contextPath}/exercises" method="post">
                         <input type="hidden" name="exerciseId" value="${exercise.id}"/>
-                        <input type="hidden" name="action" value="delete"/>
                         <button type="submit">Delete</button>
                     </form>
                 </td>
             </tr>
     </c:forEach>
 </table>
-<form action="${pageContext.request.contextPath}/exercises" method="post">
-    <input type="hidden" name="exerciseId" value="${exercise.id}"/>
-    <input type="hidden" name="action" value="create"/>
-    <button type="submit">Создать упражнение</button>
-</form>
-<form action="${pageContext.request.contextPath}/exercises" method="post">
-    <input type="hidden" name="exerciseId" value="${exercise.id}"/>
-    <input type="hidden" name="action" value="home"/>
-    <button type="submit">Главная страница</button>
-</form>
+    <a href="createExercise">Создать упражнение</a>
+    <a href="/">Главная страница</a>
 </body>
 </html>

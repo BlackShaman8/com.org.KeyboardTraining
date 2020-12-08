@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
 </head>
 <body>
 
@@ -15,7 +16,7 @@
                 Уровень сложности упражнения:
             </th>
             <td>
-                <select name="difficultyLevel">
+                <select name="difficultyLevel" id="difficultyLevel">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -28,18 +29,16 @@
                 Текст упражнения:
             </th>
             <td>
-                <input type="text" name="exercise">
+                <input type="text" name="exercise" onkeydown="return restrictionOfEnteredCharacters(this,event)">
             </td>
         </tr>
     </table>
     <input type="hidden" name="action" value="create"/>
     <button type="submit">Создать</button>
 </form>
-<form action="${pageContext.request.contextPath}/createExercise" method="post">
-    <input type="hidden" name="difficultyLevel" value="id"/>
-    <input type="hidden" name="exercise" value="ex"/>
-    <input type="hidden" name="action" value="back"/>
-    <button type="submit">Отмена</button>
-</form>
+    <a href="exercises">Назад</a>
+<script type="text/javascript" charset="windows-1251">
+    <%@include file="../../resources/js/code.js"%>
+</script>
 </body>
 </html>
