@@ -386,9 +386,9 @@ h4.edit
 
 #button1
 {
-	top:10px;
-	left:430px;
-	width:50px;
+	left:375px;
+	width:auto;
+	border:2px solid grey;
 }
 
 #button2
@@ -447,6 +447,27 @@ h4.edit
 	width:200px;
 	padding: 7px 16px;
 }
+#buttonreg1
+{
+	border:2px solid grey;
+	left:352px;
+	width:auto;
+	padding: 7px 16px;
+	font-size:12px;
+
+
+}
+#buttonreg2
+{
+	border:2px solid grey;
+	left:352px;
+	width:auto;
+	padding: 7px 16px 6px 16px;
+	font-size:13px;
+}
+
+
+
 
 #userst
 {

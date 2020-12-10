@@ -37,6 +37,7 @@
 
 
                     <div>
+                        <a id="buttonreg1" class="c-button" href="registration">Регистрация</a>
                         <button type="submit" id="button1" class="c-button">Вход</button>
                     </div>
 
