@@ -34,7 +34,7 @@
             <li><h3 class="label is-size-4 has-text-link has-text-centered"><span id="error_counter">0</span> Ошибок</h3></li>
             <li><h3 class="label is-size-4 has-text-link has-text-centered"><span id="speed_counter">0</span> Зн./мин</h3></li>
             <li><input onclick="newGame()" value= "Начать заново" type="button"></li>
-            <li><a href="trainingParameters">Настройки</a></li>
+            <li><a href="/user/trainingParameters">Настройки</a></li>
         </ul>
         <progress id="prog" class="progress is-danger" value="0" max="20"></progress>
         <h3 class="label is-size-5 has-text-white has-text-centered begin">Press Enter to Start</h3>

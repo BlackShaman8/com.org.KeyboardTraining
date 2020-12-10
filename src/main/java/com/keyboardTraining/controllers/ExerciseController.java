@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 public class ExerciseController {
     private final ExerciseServiceImpl exerciseService;
@@ -38,7 +40,10 @@ public class ExerciseController {
     }
 
     @GetMapping("/createExercise")
-    public String createExercise() {
+    public String createExercise(Model model) {
+        List<DifficultyLevel> list=difficultyLevelService.getAll();
+        for(int i=0;i<list.size();i++)
+            model.addAttribute("difficulteLevel"+i,list.get(i));
         return "createExercise";
     }
 
@@ -68,18 +73,13 @@ public class ExerciseController {
                                           @RequestParam String minLength,
                                           @RequestParam String maxLength,
                                           @RequestParam String maxNumberOfErrors,
-                                          @RequestParam String pressingTime,
-                                          @RequestParam(required = true, defaultValue = "") String action) {
-        if (action.equals("change")) {
-            DifficultyLevel difficultyLevel = difficultyLevelService.getDifficultyLevel(Long.parseLong(difficultyLevelId));
-            difficultyLevel.setMinLength(Integer.parseInt(minLength));
-            difficultyLevel.setMaxLength(Integer.parseInt(maxLength));
-            difficultyLevel.setMaxNumberOfErrors(Integer.parseInt(maxNumberOfErrors));
-            difficultyLevel.setPressingTime(Double.parseDouble(pressingTime));
-            difficultyLevelService.changeDifficultyLevel(difficultyLevel);
-        } else if (action.equals("back")) {
-            return "redirect:/difficultyLevels";
-        }
+                                          @RequestParam String pressingTime) {
+        DifficultyLevel difficultyLevel = difficultyLevelService.getDifficultyLevel(Long.parseLong(difficultyLevelId));
+        difficultyLevel.setMinLength(Integer.parseInt(minLength));
+        difficultyLevel.setMaxLength(Integer.parseInt(maxLength));
+        difficultyLevel.setMaxNumberOfErrors(Integer.parseInt(maxNumberOfErrors));
+        difficultyLevel.setPressingTime(Double.parseDouble(pressingTime));
+        difficultyLevelService.changeDifficultyLevel(difficultyLevel);
 
 
         return "redirect:/difficultyLevels";

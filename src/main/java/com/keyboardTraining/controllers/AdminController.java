@@ -21,26 +21,35 @@ public class AdminController {
         this.userService = userService;
     }
 
-    @GetMapping("/asdf")
+    @GetMapping("/accountManagement")
     public String userList(Model model) {
         model.addAttribute("allUsers", userService.allUsers());
-        return "asdf";
+        return "accountManagement";
     }
 
-    @PostMapping("/asdf")
+    @GetMapping("/editProfile")
+    public String getEditAdminProfile(Map<String, Object> model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName();//get logged in username
+        User user = (User) userService.loadUserByUsername(name);
+        model.put("user", user);
+        return "editProfile";
+    }
+
+    @PostMapping("/accountManagement")
     public String  deleteUser(@RequestParam(required = true, defaultValue = "" ) Long userId,
                               @RequestParam(required = true, defaultValue = "" ) String action,
                               Model model) {
         if (action.equals("delete")){
             userService.deleteUser(userId);
         }
-        return "redirect:/asdf";
+        return "redirect:/accountManagement";
     }
 
-    @GetMapping("/asdf/gt/{userId}")
+    @GetMapping("/accountManagement/gt/{userId}")
     public String  gtUser(@PathVariable("userId") Long userId, Model model) {
         model.addAttribute("allUsers", userService.usergtList(userId));
-        return "asdf.jsp";
+        return "accountManagement";
     }
 
 

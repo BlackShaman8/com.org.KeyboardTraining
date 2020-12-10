@@ -1,50 +1,61 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <script type="text/javascript" charset="windows-1251">
         <%@include file="../../resources/js/code.js"%>
     </script>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Параметры тренировки</title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link href="../../resources/css/templatemo_style.css" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
+<div id="templatemo_body_wrapper">
+    <div id="templatemo_wrapper">
 
-<div class="container">
-    <nav>
-        <ul>
-            <li><h3>${pageContext.request.userPrincipal.name}</h3></li>
-            <li>Ваш уровень: ${user.level}</li>
-        </ul>
-    </nav>
-</div>
-<div class="main">
-    <div class="container">
+        <div id="templatemo_header">
 
-        <table border="0">
-            <th>Выберите уровень сложности:</th>
+            <div id="site_title"><h1>Параметры тренировки</h1></div>
 
-            <th><select id="difficultyLevel" onchange="changeSelect()">
-                <c:forEach items="${allDifficultyLevel}" var="difficultyLevel">
-                    <option> ${difficultyLevel.id}</option>
-                </c:forEach>
-            </select></th>
-            </tr>
-            <tr>
-                <th>Выберите упражнение:</th>
-                <th class="exerciseSelection">
-                    <select><c:forEach items="${exercisesLevel1}" var="exercise">
-                        <option>${exercise.exercise}</option>
-                    </c:forEach></select>
-                </th>
-            </tr>
-        </table>
+
+        </div>
+
+
+        <div>
+            <h4 id="trpar" class="enter">Логин пользователя: ${pageContext.request.userPrincipal.name}</h4>
+            <h4 id="trpar" class="enter">Уровень:&nbsp&nbsp&nbsp&nbsp
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp${user.level}</h4>
+            <h4 id="list1" class="enter">Выберите уровень сложности:
+                <select id="difficultyLevel" onchange="changeSelect()">
+                    <c:forEach items="${allDifficultyLevel}" var="difficultyLevel">
+                        <option> ${difficultyLevel.id}</option>
+                    </c:forEach>
+                </select></h4>
+            <h4 id="list1" class="enter">Выберите упражнение:
+                <h4 class="exerciseSelection">
+                    <select id="sel idLevel" onchange="createTraining()">
+                        <c:forEach items="${exercisesLevel1}" var="exercise">
+                            <option value=" ${exercise.id}">
+                                    ${exercise.exercise}
+                            </option>
+                        </c:forEach>
+                    </select></h4>
+            </h4>
+
+
+            <div><a id="buttontrpar" onclick="saveExercise()" class="c-button hrefTraining" href="/user/training/">Начать тренировку</a></div>
+
+        </div>
+        <div class="cleaner"></div>
+        <div class="cleaner"></div>
     </div>
 </div>
-<a href="/user/training">Начать тренировку</a>
+
 
 </body>
 </html>
