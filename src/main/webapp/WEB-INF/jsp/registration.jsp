@@ -18,9 +18,10 @@
                 <div id="site_title"><h1>Создание учетной записи</h1></div>
             </div>
             <div>
-                <h4 id="edit1" class="edit">Логин: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <form:input type="text" path="login" class="col" name="login" align="middle"
+
+                <h4 id="edit1" class="edit">Логин:&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    <form:input type="text" path="password" class="col" name="login" align="middle"
                                 placeholder="Логин пользователя"></form:input>
                     <form:errors path="login"></form:errors>
                         ${usernameError}</h4>
