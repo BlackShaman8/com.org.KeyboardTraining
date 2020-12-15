@@ -22,12 +22,14 @@ public class UserController {
     private final UserService userService;
     private final ExerciseServiceImpl exerciseService;
     private final DifficultyLevelServiceImpl difficultyLevelService;
+    private String exer;
 
     @Autowired
     public UserController(UserService userService, ExerciseServiceImpl exerciseService, DifficultyLevelServiceImpl difficultyLevelService) {
         this.userService = userService;
         this.exerciseService = exerciseService;
         this.difficultyLevelService = difficultyLevelService;
+        exer="";
     }
 
     @GetMapping("/user/trainingParameters")
@@ -61,6 +63,8 @@ public class UserController {
         String name = auth.getName();//get logged in username
         User user = (User) userService.loadUserByUsername(name);
         model.put("user", user);
+        Exercise exercise=exerciseService.getExercise(Long.parseLong(exer));
+        model.put("exercise", exercise);
         return "training";
     }
 
@@ -110,9 +114,20 @@ public class UserController {
 //        return "training";
 //    }
 //
-//    @PostMapping("/user/trainingParameters")
-//    public String postPerameters(@RequestParam String exercise){
-//        Long id=Long.parseLong(exercise.trim());
-//        return "training?id="+id;
-//    }
+    @PostMapping("/user/trainingParameters")
+    public String postPerameters(Map<String, Object> model,@RequestParam String section){
+        exer=section.trim();
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        String name = auth.getName();//get logged in username
+//        User user = (User) userService.loadUserByUsername(name);
+//        model.put("user", user);
+//        Exercise exercise=exerciseService.getExercise(Long.parseLong(exer.trim()));
+//        model.put("exercise", exercise);
+        return "redirect:training";
+    }
+
+    @PostMapping("/user/training")
+    public String postTraining(){
+        return "result";
+    }
 }

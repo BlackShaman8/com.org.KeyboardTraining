@@ -27,6 +27,7 @@
 
 
         <div>
+            <form method="POST">
             <h4 id="trpar" class="enter">Логин пользователя: ${pageContext.request.userPrincipal.name}</h4>
             <h4 id="trpar" class="enter">Уровень:&nbsp&nbsp&nbsp&nbsp
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp${user.level}</h4>
@@ -38,7 +39,7 @@
                 </select></h4>
             <h4 id="list1" class="enter">Выберите упражнение:
                 <h4 class="exerciseSelection">
-                    <select id="sel idLevel" onchange="createTraining()">
+                    <select id="sel idLevel" name ="section" <%--onchange="createTraining()"--%>>
                         <c:forEach items="${exercisesLevel1}" var="exercise">
                             <option value=" ${exercise.id}">
                                     ${exercise.exercise}
@@ -47,7 +48,8 @@
                     </select></h4>
             </h4>
 
-
+                <button type="submit">Начать тренировку</button>
+            </form>
             <div><a id="buttontrpar" onclick="saveExercise()" class="c-button hrefTraining" href="/user/training/">Начать тренировку</a></div>
 
         </div>

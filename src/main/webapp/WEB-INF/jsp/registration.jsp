@@ -21,17 +21,17 @@
 
                 <h4 id="edit1" class="edit">Логин:&nbsp&nbsp
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <form:input type="text" path="password" class="col" name="login" align="middle"
-                                placeholder="Логин пользователя"></form:input>
+                    <form:input type="text" path="login" class="col" name="login" align="middle" size="8"
+                                placeholder="Логин пользователя" minLength="2" maxlength="8"></form:input>
                     <form:errors path="login"></form:errors>
                         ${usernameError}</h4>
                 <h4 id="edit2" class="edit">Пароль:
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <form:input type="password" path="password" class="col" name="password" align="middle"
-                                placeholder="Пароль"></form:input></h4>
+                                placeholder="Пароль" minLength="4" maxlength="12"></form:input></h4>
                 <h4 id="edit3" class="edit">Повторите пароль: <form:input type="password" path="passwordConfirm"
-                                                                          class="col" name="login" align="middle"
-                                                                          placeholder="Пароль"></form:input></h4>
+                                                                          class="col" name="passwordConfirm" align="middle"
+                                                                          placeholder="Пароль" minLength="4" maxlength="12"></form:input></h4>
                 <form:errors path="password"></form:errors>
                     ${passwordError}
                 <div><a id="buttonreg1" class="c-button" href="login">Авторизация</a>

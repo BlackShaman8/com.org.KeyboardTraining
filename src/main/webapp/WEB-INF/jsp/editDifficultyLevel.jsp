@@ -29,19 +29,19 @@
                 </tr> <!--ряд с ячейками заголовков-->
                 <tr align="center">
                     <td id="td1">Минимальная длина</td>
-                    <td><input type="number" name="minLength" class="col" size="1" value=${difficultyLevel.minLength}></td>
+                    <td><input type="number" name="minLength" class="col" size="1" min="20" max="200" value=${difficultyLevel.minLength}></td>
                 </tr>
                 <tr align="center">
                     <td>Максимальная длина</td>
-                    <td><input type="number" name="maxLength" class="col" size="1" value=${difficultyLevel.maxLength}></td>
+                    <td><input type="number" name="maxLength" class="col" size="1" min="20" max="200" value=${difficultyLevel.maxLength}></td>
                 </tr>
                 <tr align="center">
                     <td>Максимальное количество ошибок</td>
-                    <td><input type="number" name="maxNumberOfErrors" class="col" size="1" value=${difficultyLevel.maxNumberOfErrors}></td>
+                    <td><input type="number" name="maxNumberOfErrors" class="col" size="1" min="1" max="10" value=${difficultyLevel.maxNumberOfErrors}></td>
                 </tr>
                 <tr align="center">
                     <td>Минимальная скорость печати</td>
-                    <td><input type="number" name="pressingTime" class="col" size="1" value=${difficultyLevel.pressingTime}></td>
+                    <td><input type="number" name="pressingTime" class="col" step="0.1"  min="0" max="3" value=${difficultyLevel.pressingTime}></td>
                 </tr>
                 <!--ряд с ячейками тела таблицы-->
 

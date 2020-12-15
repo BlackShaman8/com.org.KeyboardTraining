@@ -47,7 +47,10 @@ public class UserService implements UserDetailsService {
     }
 
     public List<User> allUsers() {
-        return (List<User>) userRepos.findAll();
+        List<User> users=(List<User>) userRepos.findAll();
+        User admin=userRepos.findUserByLogin("admin");
+        users.remove(admin);
+        return users;
     }
 
     public boolean saveUser(User user) {

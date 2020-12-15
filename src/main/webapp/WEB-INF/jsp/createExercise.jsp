@@ -32,8 +32,8 @@
         <div style="position: relative; ">
 
                 <p>
-                <h4 id="editex" class="enter">Уровень сложности: <select size="1" required>
-                    <option selected value="1">1</option>
+                <h4 id="editex" class="enter">Уровень сложности: <select size="1" id="difficultyLevel" required>
+                    <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
@@ -42,7 +42,7 @@
                 <div class="cleaner_h10"></div>
 
                 <label style="right:50px;  font-size: 18px; color :#666" for="text">Текст упражнения:</label>
-                <textarea id="text" name="text" rows="10" cols="50" class="required" type="text" name="exercise" minlength="${difficulteLevel1.minLength}" maxlength=${difficulteLevel1.maxLength}" onkeydown="return restrictionOfEnteredCharacters(this,event)"></textarea>
+                <textarea id="text" name="text" rows="10" cols="50" class="required" type="text" name="exercise" minlength="${difficulteLevel1.minLength}" maxlength="${difficulteLevel1.maxLength}" onkeydown="return restrictionOfEnteredCharacters(this,event)"></textarea>
                 <div class="cleaner_h10"></div>
 
                 <a style="position: relative; padding:8px 25px; left: 600px; bottom: 140px" class="c-button" href="#">Авто</a>

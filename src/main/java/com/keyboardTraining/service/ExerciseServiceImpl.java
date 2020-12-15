@@ -11,6 +11,7 @@ import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ExerciseServiceImpl implements ExerciseService {
@@ -43,7 +44,8 @@ public class ExerciseServiceImpl implements ExerciseService {
 
     @Override
     public Exercise getExercise(Long id) {
-        return null;
+        Optional<Exercise> exercise=exerciseRepos.findById(id);
+        return exercise.orElse(new Exercise());
     }
 
     @Override
