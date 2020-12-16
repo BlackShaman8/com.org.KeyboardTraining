@@ -48,10 +48,8 @@
                     </select></h4>
             </h4>
 
-                <button type="submit">Начать тренировку</button>
+                <div><button type="submit" id="buttontrpar" class="c-button">Начать тренировку</button></div>
             </form>
-            <div><a id="buttontrpar" onclick="saveExercise()" class="c-button hrefTraining" href="/user/training/">Начать тренировку</a></div>
-
         </div>
         <div class="cleaner"></div>
         <div class="cleaner"></div>
