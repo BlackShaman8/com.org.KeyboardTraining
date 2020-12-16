@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="vk_loader.js?vk_layout=CN%20Chinese%20Simpl.%20Pinyin&vk_skin=flat_gray" ></script>
     <title>Log in with your account</title>
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"> -->
 
@@ -21,13 +22,21 @@
             display: inline;
         }
     </style>
-
+    <style type="text/css">
+        html, body {
+            font: 12px Verdana, Arial, Tahoma;
+        }
+        table form textarea {
+            width: 650px;
+        }
+    </style>
 </head>
 <body onload="init()">
 <section class="hero is-primary is-large">
     <!-- воспользуемся готовым элементом hero из bulma -->
     <h class="label is-size-4" align="right">${pageContext.request.userPrincipal.name}</h>
     <h>Ваш уровень: ${user.level}</h>
+    <input id="exercise" type="text" name="exercise" value="${exercise.exercise}"/>
     <div class="hero-head container">
         <h1 class="label is-size-3 has-text-white promo"> Наш простой тренажер</h1>
         <ul>
@@ -50,7 +59,11 @@
         </div>
     </div>
 </section>
+<form method="post" name="myResult">
+    <input class="btnResult" type="submit" />
+</form>
 <script type="text/javascript" charset="windows-1251">
     <%@include file="../../resources/js/code.js"%>
 </script>
+
 </body>
