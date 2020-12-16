@@ -35,12 +35,12 @@ function clearText(field)
   <fieldset style =" border:2px solid #67acc2; width: 10px;margin-left: auto;
     margin-right: auto ">
   <div >
-        	<h4 class = "userpage1" align="middle">Знаков в минуту: 100</h4>
-            <h4 class = "userpage2" align="middle">Ошибок: 0</h4> 
+        	<h4 class = "userpage1" align="middle">Знаков в минуту: ${speed_counter}</h4>
+            <h4 class = "userpage2" align="middle">Ошибок: ${error_counter}</h4>
       
         </div>
-		<a class="c-button" style= "left: 20px;width:100px" href="#" >Повторить</a>
-		<a class="c-button" style= "left: 30px;height:40px;width:100px" href="#" >Далее</a>
+		<a class="c-button" style= "left: 20px;width:100px" href="training" >Повторить</a>
+		<a class="c-button" style= "left: 30px;height:40px;width:100px" href="trainingParameters" >Далее</a>
   </fieldset>
 </form>
         

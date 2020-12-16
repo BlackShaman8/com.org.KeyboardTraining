@@ -11,7 +11,7 @@
     <link href="../../resources/css/templatemo_style.css" rel="stylesheet" type="text/css"/>
 
 </head>
-<body background="../../resources/images/siren-tsvety-myshka-klaviatura-ruchka.jpg">
+<body>
 <div id="templatemo_body_wrapper">
     <div id="templatemo_wrapper">
 
@@ -24,18 +24,19 @@
 
         <form method="POST">
             <div>
-                <h4  style="color: #550055;left:330px; position: relative;top:30px; font-weight: bold;" >Логин пользователя:${pageContext.request.userPrincipal.name}</h4>
-                <h4 style="color: #550055;left:300px; position: relative;top:30px; font-weight: bold;">Логин: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <h4 class="userpage1" align="middle">Логин пользователя:${pageContext.request.userPrincipal.name}</h4>
+
+                <h4 id="edit1" class="edit">Логин: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <input type="text" class="col" name="login" align="middle" placeholder="Логин пользователя"></h4>
-                <h4 style="color: #550055;left:300px; position: relative;top:30px; font-weight: bold;">Пароль:
-                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                <h4 id="edit2" class="edit">Пароль:
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <input type="text" class="col" name="password" align="middle" placeholder="Пароль"></h4>
-                <h4 style="color: #550055;left:300px; position: relative;top:30px; font-weight: bold;">Повторите пароль: <input type="text" class="col" name="passwordConfirm" align="middle"
+                <h4 id="edit3" class="edit">Повторите пароль: <input type="text" class="col" name="passwordConfirm" align="middle"
                                                                      placeholder="Пароль"></h4>
                 <input type="hidden" name="id" value="${user.id}">
-                <div><button type="submit" style="right:100px;position: relative;top:30px;width: 160px;" class="butggton" >Сохранить</button>
-                    <a style="left:91px; position: relative; bottom:21px;width: 150px;"  class="butggton" href="/">Отменить</a></div>
+                <div><button type="submit" id="button3 buttonreg2" class="c-button">Сохранить</button>
+                    <a id="button4" class="c-button" href="/">Отменить</a></div>
 
             </div>
         </form>

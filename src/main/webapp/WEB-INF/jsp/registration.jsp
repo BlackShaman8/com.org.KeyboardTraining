@@ -10,32 +10,32 @@
     <meta name="description" content=""/>
     <link href="../../resources/css/templatemo_style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body  background="../../resources/images/siren-klaviatura-myshka-tsvety (1).jpg">
+<body>
 <div id="templatemo_body_wrapper">
     <form:form method="POST" modelAttribute="userForm">
         <div id="templatemo_wrapper">
             <div id="templatemo_header">
-                <div id="site_title" ><h1 style="color:#FF3399"><b>Создание учетной записи</b></h1></div>
+                <div id="site_title"><h1>Создание учетной записи</h1></div>
             </div>
             <div>
-                <h4  class="edit" style="color:#550055;left:291px;"></h4>
-                <h4  class="edit" style="color:#550055;left:291px;"><b>Логин:&nbsp&nbsp&nbsp&nbsp</b>
+
+                <h4 id="edit1" class="edit">Логин:&nbsp&nbsp
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <form:input style="width:160px" type="text" path="login" class="col" name="login" align="middle"
-                                placeholder="Логин пользователя"></form:input></h4>
-                    <form:errors  path="login"></form:errors>
+                    <form:input type="text" path="login" class="col" name="login" align="middle" size="8"
+                                placeholder="Логин пользователя" minLength="2" maxlength="8"></form:input>
+                    <form:errors path="login"></form:errors>
                         ${usernameError}</h4>
-                <h4  class="edit" style="color:#550055;left:291px;"><b>Пароль:&nbsp&nbsp </b>
+                <h4 id="edit2" class="edit">Пароль:
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <form:input type="password" path="password" class="col" name="password" align="middle"
-                                placeholder="Пароль"></form:input></h4>
-                <h4 id="edit3" class="edit" style="color:#550055"><b>Повторите пароль: </b> <form:input type="password" path="passwordConfirm"
+                                placeholder="Пароль" minLength="4" maxlength="12"></form:input></h4>
+                <h4 id="edit3" class="edit">Повторите пароль: <form:input type="password" path="passwordConfirm"
                                                                           class="col" name="passwordConfirm" align="middle"
-                                                                          placeholder="Пароль"></form:input></h4>
-                <form:errors style="text-align:center;" path="password"></form:errors>
+                                                                          placeholder="Пароль" minLength="4" maxlength="12"></form:input></h4>
+                <form:errors path="password"></form:errors>
                     ${passwordError}
-                <div><a style="width:150px; right:90px; ;" class="butggton" href="login">Авторизация</a>
-                    <button type="submit" style="width:150px;left:90px;bottom:51px;" class="butggton">Регистрация</button></div>
+                <div><a id="buttonreg1" class="c-button" href="login">Авторизация</a>
+                    <button type="submit" id="buttonreg2" class="c-button">Регистрация</button></div>
 
             </div>
 

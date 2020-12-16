@@ -1,19 +1,21 @@
 package com.keyboardTraining.controllers;
 
 import com.keyboardTraining.model.Exercise;
+import com.keyboardTraining.model.Statistics;
 import com.keyboardTraining.model.User;
 import com.keyboardTraining.service.DifficultyLevelServiceImpl;
 import com.keyboardTraining.service.ExerciseServiceImpl;
+import com.keyboardTraining.service.StatisticsService;
 import com.keyboardTraining.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Date;
 import java.util.Map;
 
 @Controller
@@ -22,14 +24,19 @@ public class UserController {
     private final UserService userService;
     private final ExerciseServiceImpl exerciseService;
     private final DifficultyLevelServiceImpl difficultyLevelService;
+    private final StatisticsService statisticsService;
     private String exer;
+    private String my_error_counter;
+    private String my_speed_counter;
 
     @Autowired
-    public UserController(UserService userService, ExerciseServiceImpl exerciseService, DifficultyLevelServiceImpl difficultyLevelService) {
+    public UserController(UserService userService, ExerciseServiceImpl exerciseService, DifficultyLevelServiceImpl difficultyLevelService, StatisticsService statisticsService) {
         this.userService = userService;
         this.exerciseService = exerciseService;
         this.difficultyLevelService = difficultyLevelService;
-        exer="";
+        this.statisticsService = statisticsService;
+        exer = "";
+        my_error_counter = "";
     }
 
     @GetMapping("/user/trainingParameters")
@@ -63,7 +70,7 @@ public class UserController {
         String name = auth.getName();//get logged in username
         User user = (User) userService.loadUserByUsername(name);
         model.put("user", user);
-        Exercise exercise=exerciseService.getExercise(Long.parseLong(exer));
+        Exercise exercise = exerciseService.getExercise(Long.parseLong(exer));
         model.put("exercise", exercise);
         return "training";
     }
@@ -85,10 +92,6 @@ public class UserController {
         return "profile";
     }
 
-    @GetMapping("/user/userStats")
-    public String getUserStats() {
-        return "userStats";
-    }
 
     @GetMapping("/user/editProfile")
     public String getEditProfile(Map<String, Object> model) {
@@ -97,6 +100,33 @@ public class UserController {
         User user = (User) userService.loadUserByUsername(name);
         model.put("user", user);
         return "editProfile";
+    }
+
+    @GetMapping("/user/result")
+    public String getResult(Map<String, String> model) {
+        model.put("error_counter", my_error_counter);
+        model.put("speed_counter", my_speed_counter);
+        return "result";
+    }
+
+    @GetMapping("/user/userStats")
+    public String getUserStats(Map<String, Object> model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName();//get logged in username
+        User user = (User) userService.loadUserByUsername(name);
+        model.put("user", user);
+        model.put("statistics",statisticsService.getAllByUser(user.getId()));
+        return "userStats";
+    }
+
+    @GetMapping("/user/allUserStats")
+    public String getAllUserStats(Map<String, Object> model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName();//get logged in username
+        User user = (User) userService.loadUserByUsername(name);
+        model.put("user", user);
+        model.put("statistics",statisticsService.getAll());
+        return "userStats";
     }
 
     @PostMapping("/user/editProfile")
@@ -109,14 +139,11 @@ public class UserController {
         return "editProfile";
     }
 
-//    @GetMapping("/user/training?id={id}")
-//    public String getTraininge(@RequestParam String id) {
-//        return "training";
-//    }
-//
+
+
     @PostMapping("/user/trainingParameters")
-    public String postPerameters(Map<String, Object> model,@RequestParam String section){
-        exer=section.trim();
+    public String postPerameters(Map<String, Object> model, @RequestParam String section) {
+        exer = section.trim();
 //        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 //        String name = auth.getName();//get logged in username
 //        User user = (User) userService.loadUserByUsername(name);
@@ -127,7 +154,26 @@ public class UserController {
     }
 
     @PostMapping("/user/training")
-    public String postTraining(){
-        return "result";
+    public String postTraining(@RequestParam String exerciseinput, @RequestParam String transitTime,
+                               @RequestParam String averageSpeed, @RequestParam String numberOfMistakes,
+                               @RequestParam String status) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName();//get logged in username
+        User user = (User) userService.loadUserByUsername(name);
+        Statistics statistics = new Statistics();
+        statistics.setUser(user);
+        statistics.setExercise(exerciseService.getExercise(Long.parseLong(exerciseinput.trim())));
+        statistics.setTransitTime(Double.parseDouble(transitTime.trim()));
+        statistics.setAverageSpeed(Double.parseDouble(averageSpeed.trim()));
+        statistics.setNumberOfMistakes(Integer.parseInt(numberOfMistakes.trim()));
+        statistics.setDate(new Date());
+        if (status.equals("true"))
+            statistics.setStatus(true);
+        else
+            statistics.setStatus(false);
+        statisticsService.saveStatistics(statistics);
+        my_error_counter = numberOfMistakes;
+        my_speed_counter = averageSpeed;
+        return "redirect:result";
     }
 }

@@ -10,9 +10,8 @@
     <meta name="description" content=""/>
     <link href="../../resources/css/templatemo_style.css" rel="stylesheet" type="text/css"/>
 
-
 </head>
-<body style="background-image:url(../../resources/images/siren-klaviatura-myshka-tsvety(1).jpg)" !important>
+<body>
 <sec:authorize access="isAuthenticated()">
     <% response.sendRedirect("/"); %>
 </sec:authorize>
@@ -21,7 +20,7 @@
 
         <div id="templatemo_header">
 
-            <div id="site_title" ><h1>Клавиатурный тренажер</h1></div>
+            <div id="site_title"><h1>Клавиатурный тренажер</h1></div>
 
 
         </div> <!-- end of templatemo header -->
@@ -30,17 +29,16 @@
             <div id="templatemo_main">
 
                 <div>
-
-                    <h4 id="enter1" class="enter" style="color:#550055"><b>Логин</b> &nbsp <input type="text" class="col" name="username"
+                    <h4 id="enter1" class="enter">Логин &nbsp <input type="text" class="col" name="username"
                                                                      placeholder="Введите логин"></h4>
-                    <h4 id="enter2" class="enter" style="color:#550055"><b>Пароль</b> <input type="password" class="col" name="password"
+                    <h4 id="enter2" class="enter">Пароль <input type="password" class="col" name="password"
                                                                 placeholder="Введите пароль">
                     </h4>
 
 
                     <div>
-                        <a style="width:150px; right:47px; top:2px;" class="butggton" href="registration">Регистрация</a>
-                        <button type="submit" style="width:70px; bottom:50px; left:83px ; " class="butggton">Вход</button>
+                        <a id="buttonreg1" class="c-button" href="registration">Регистрация</a>
+                        <button type="submit" id="button1" class="c-button">Вход</button>
                     </div>
 
                 </div>
