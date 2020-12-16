@@ -24,14 +24,14 @@
 
         <div>
 
-            <table class="col">
+            <table style="top:35px;position: relative;" class="col">
                 <tr>
                     <th>Номер</th>
                     <th>Минимальная длина</th>
                     <th>Максимальная длина</th>
                     <th>Максимальное количество ошибок</th>
                     <th>Среднее время нажатия</th>
-                    <th></th>
+                    <th>Настройка</th>
                 </tr> <!--ряд с ячейками заголовков-->
                 <c:forEach items="${allDifficultyLevel}" var="difficultyLevel">
                     <tr align="center">
@@ -48,7 +48,7 @@
             </table>
         </div>
 
-        <a id="buttonedit" class="c-button" href="/">Назад</a>
+        <a style="right:10px; position: relative; top:40px;width: 150px;" id="buttonedit" class="butggton" href="/">Назад</a>
         <div class="cleaner"></div>
         <div class="cleaner"></div>
     </div> <!-- end of templatemo wrapper -->

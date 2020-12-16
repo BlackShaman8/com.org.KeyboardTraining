@@ -48,8 +48,16 @@
                     </select></h4>
             </h4>
 
-                <div><button type="submit" id="buttontrpar" class="c-button">Начать тренировку</button></div>
+<<<<<<< HEAD
+
+            <div><a id="buttontrpar" onclick="saveExercise()" class="butggton" href="/user/training/">Начать тренировку</a></div>
+            <div><a id="buttontrpar" onclick="saveExercise()" class="butggton" href="/">Назад</a></div>
+=======
+                <button type="submit">Начать тренировку</button>
             </form>
+            <div><a id="buttontrpar" onclick="saveExercise()" class="c-button hrefTraining" href="/user/training/">Начать тренировку</a></div>
+>>>>>>> 003c10b37724af235237cdeb20252446e83f96bf
+
         </div>
         <div class="cleaner"></div>
         <div class="cleaner"></div>

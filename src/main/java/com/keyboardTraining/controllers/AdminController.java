@@ -1,7 +1,6 @@
 package com.keyboardTraining.controllers;
 
 import com.keyboardTraining.model.User;
-import com.keyboardTraining.service.StatisticsService;
 import com.keyboardTraining.service.UserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,11 +16,9 @@ import java.util.Map;
 @Controller
 public class AdminController {
     private final UserService userService;
-    private final StatisticsService statisticsService;
 
-    public AdminController(UserService userService, StatisticsService statisticsService) {
+    public AdminController(UserService userService) {
         this.userService = userService;
-        this.statisticsService = statisticsService;
     }
 
     @GetMapping("/accountManagement")
@@ -39,28 +36,12 @@ public class AdminController {
         return "editProfile";
     }
 
-    @GetMapping("/userStats/{userId}")
-    public String getStatisticsUser(Map<String, Object> model,@PathVariable String userId){
-        model.put("statistics",statisticsService.getAllByUser(Long.parseLong(userId.trim())));
-        model.put("user",userService.findUserById(Long.parseLong(userId)));
-        return "userStats";
-    }
-
-    @GetMapping("/userStats")
-    public String getUserStats(Map<String, Object> model){
-        model.put("statistics",statisticsService.getAll());
-        return "userStats";
-    }
-
     @PostMapping("/accountManagement")
     public String  deleteUser(@RequestParam(required = true, defaultValue = "" ) Long userId,
                               @RequestParam(required = true, defaultValue = "" ) String action,
                               Model model) {
         if (action.equals("delete")){
             userService.deleteUser(userId);
-        }
-        if(action.equals("statistics")){
-            return "redirect:/statisticsUser/"+userId;
         }
         return "redirect:/accountManagement";
     }
