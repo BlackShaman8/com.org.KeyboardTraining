@@ -23,7 +23,7 @@
 
         <div>
 
-            <table class="col">
+            <table style="position:relative;top:40px;  "class="col">
                 <tr>
                     <th width="20%">Логин</th>
                     <th width="20%">Роль</th>
@@ -32,18 +32,18 @@
                     <th width="20%">Удаление</th>
                 </tr> <!--ряд с ячейками заголовков-->
                 <c:forEach items="${allUsers}" var="user">
-                    <tr align="center">
+                    <tr align="center" >
                         <td>${user.username}</td>
                         <td>
                             <c:forEach items="${user.roles}" var="role">${role.name}; </c:forEach>
                         <td>${user.level}</td>
                         </td>
-                        <td><a id="buttonedit" class="c-button" href="userStats">Посмотреть статистику</a></td>
+                        <td><a style="margin: 0  0 0 0;border: none; height:42px; " class="butggton" href="userStats">Посмотреть статистику</a></td>
                         <td>
                             <form action="${pageContext.request.contextPath}/accountManagement" method="post">
                                 <input type="hidden" name="userId" value="${user.id}"/>
                                 <input type="hidden" name="action" value="delete"/>
-                                <button id="buttonedit" class="c-button" type="submit">Delete</button>
+                                <button style="margin: 0  0 0 0;height:50px; border: none "class="butggton" type="submit">Удалить</button>
                             </form>
                         </td>
                     </tr>
@@ -51,12 +51,9 @@
                 </c:forEach>
             </table>
             <div>
-                <a id="buttonmanagement" class="c-button" href="/">Отмена</a></div>
+                <a style="top:50px;width:150px; right:4px;" class="butggton" href="/">Назад</a></div>
         </div>
 
-
-        <div id="templatemo_footer"></div>
-        <div id="templatemo_footer"></div>
 
 
         <div class="cleaner"></div>

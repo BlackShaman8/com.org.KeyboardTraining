@@ -45,12 +45,12 @@
                 <textarea id="text" name="text" rows="10" cols="50" class="required" type="text" name="exercise" minlength="${difficulteLevel1.minLength}" maxlength="${difficulteLevel1.maxLength}" onkeydown="return restrictionOfEnteredCharacters(this,event)"></textarea>
                 <div class="cleaner_h10"></div>
 
-                <a style="position: relative; padding:8px 25px; left: 600px; bottom: 140px" class="c-button" href="#">Авто</a>
-                <a style="position: relative; left: 600px; bottom: 140px" class="c-button" href="#">Загрузить</a>
+                <a style="position: relative; padding:5px 3px; width: 100px; left: 200px; bottom: 140px" class="butggton" href="#">Авто</a>
+                <a style="position: relative; padding:5px 3px; width: 100px; left: 350px; bottom: 192px" class="butggton" href="#">Загрузить</a>
 
                 <input type="hidden" name="action" value="create"/>
-                <button type="submit" style="position: relative;  padding:8px 15px;left: 422px; bottom: 100px" class="c-button">Создать</button>
-                <a style="position: relative; left: 423px; bottom: 100px" class="c-button" href="/exercises">Отменить</a>
+                <button type="submit" style="position: relative; padding:5px 3px;width: 110px;left: 200px; bottom: 199px" class="butggton">Создать</button>
+                <a style="position: relative; padding:5px 3px; left: 350px; bottom: 251px; width: 100px; "class="butggton" href="/exercises">Назад</a>
 
 
         </div>
