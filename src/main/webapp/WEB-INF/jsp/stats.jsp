@@ -40,16 +40,22 @@
             <div id="site_title"><h1>Статистика пользователя</h1></div>
         </div> <!-- end of templatemo header -->
 
-                    <a style="right:370px;top:20px;" href="/user/trainingParameters" class="butggton">Тренировка</a>
-                    <a style="right:160px;bottom:31px;" href="stats" class="butggton">Общая статистика</a>
-                    <a style="left:50px;bottom:82px;width:170px;" href="User.html" class="butggton">Выход</a>
+        <div id="templatemo_menu">
+            <ul>
+                <li><a href="TrainingParameters.html">Тренировка</a></li>
+                <li>
+                    <a href="../../../../../../../Downloads/templatemo_304_light_gray_new/templatemo_304_light_gray/news.html">Общая
+                        статистика</a></li>
+                <li><a href="User.html">Выход</a></li>
+            </ul>
+        </div> <!-- end of templatemo_menu -->
 
         <div>
-            <h4 style="bottom:128px;color: #550055" align="right" class="enter">Логин пользователя:  ${pageContext.request.userPrincipal.name}</h4>
+            <h4 id="userst" class="enter">Логин пользователя: LOGIN</h4>
         </div>
 
         <div>
-            <table style="bottom:100px;position: relative;">
+            <table>
                 <tr>
                     <th>Дата</th>
                     <th>Уровень</th>
@@ -75,7 +81,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    <td>Изменить</td>
                 </tr>
                 <!--ряд с ячейками тела таблицы-->
 

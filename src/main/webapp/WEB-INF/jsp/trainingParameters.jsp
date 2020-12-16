@@ -48,7 +48,8 @@
             </h4>
 
 
-            <div><a id="buttontrpar" onclick="saveExercise()" class="c-button hrefTraining" href="/user/training/">Начать тренировку</a></div>
+            <div><a id="buttontrpar" onclick="saveExercise()" class="butggton" href="/user/training/">Начать тренировку</a></div>
+            <div><a id="buttontrpar" onclick="saveExercise()" class="butggton" href="/">Назад</a></div>
 
         </div>
         <div class="cleaner"></div>
