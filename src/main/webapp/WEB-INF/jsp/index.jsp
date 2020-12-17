@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Авторизация</title>
+    <title>Тренажер</title>
     <link href="../../resources/css/templatemo_style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body background="../../resources/images/siren-tsvety-myshka-klaviatura-ruchka.jpg">
@@ -41,25 +41,25 @@
     <div id="templatemo_body_wrapper">
         <div id="templatemo_wrapper">
             <div id="templatemo_header">
-                <div id="site_title"><h1>Администратор</h1></div>
+                <div id="site_title"style="position: relative"><h1>Администратор</h1></div>
             </div>
             <div>
-                <a style="right:120px;" class="butggton" href="/editProfile">Редактировать учетную запись</a>
-                <a style="left:100px;bottom: 70px;" class="butggton" href="/accountManagement">Управление учетными
+
+                <a style="right:10px; width:300px" class="butggton" href="/accountManagement">Управление учетными
                     записями</a>
             </div>
             <div>
-                <a style="right:120px;bottom: 60px;" class="butggton" href="exercises">Просмотр упражнений</a>
-                <a style="left:100px;bottom: 130px;" class="butggton" href="difficultyLevels">Настройка уровней
+                <a style="right:120px;top:20px;" class="butggton" href="exercises">Просмотр упражнений</a>
+                <a style="left:100px;bottom: 50px;" class="butggton" href="difficultyLevels">Настройка уровней
                     сложности</a>
             </div>
             <div>
-                <a style="right:120px;bottom: 120px;color: #550055; border: 2px solid #550055;" class="butggton"
+                <a style="right:120px;bottom: 40px; border: 2px solid #550055;" class="butggton"
                    href="stats">Общая статистика</a>
-                <a style="left:100px;bottom: 171px;" class="butggton" href="/logout">Выход</a>
+                <a style="left:100px;bottom: 90px;" class="butggton" href="/logout">Выход</a>
             </div>
             <div>
-            <a style="position: relative;width: 300px;bottom: 100px; right:10px;" class="butggton" href="/about">Информация о программе</a>
+            <a style="position: relative;width: 300px;bottom: 70px; right:10px;" class="butggton" href="/about">Информация о программе</a>
             </div>
         </div>
     </div>

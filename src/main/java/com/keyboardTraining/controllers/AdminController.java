@@ -49,6 +49,10 @@ public class AdminController {
     @GetMapping("/stats")
     public String getUserStats(Map<String, Object> model){
         model.put("statistics",statisticsService.getAll());
+        model.put("statistics", statisticsService.getAll());
+        model.put("statistica150", (double)statisticsService.getAllLess(50)/(double)statisticsService.getAll().size()*100);
+        model.put("statistica150400",  (double)statisticsService.getAllLess( 50,400)/(double)statisticsService.getAll().size()*100);
+        model.put("statistica400", (double)statisticsService.getAllMore(400)/(double)statisticsService.getAll().size()*100);
         return "stats";
     }
 

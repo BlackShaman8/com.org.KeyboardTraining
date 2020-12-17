@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -28,6 +29,7 @@ public class UserController {
     private String exer;
     private String my_error_counter;
     private String my_speed_counter;
+    private String my_status;
 
     @Autowired
     public UserController(UserService userService, ExerciseServiceImpl exerciseService, DifficultyLevelServiceImpl difficultyLevelService, StatisticsService statisticsService) {
@@ -54,15 +56,6 @@ public class UserController {
         return "trainingParameters";
     }
 
-
-//    @GetMapping("/user/training")
-//    public String getTraining(Map<String,Object> model){
-//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//        String name = auth.getName();//get logged in username
-//        User user=(User)userService.loadUserByUsername(name);
-//        model.put("user",user);
-//        return "training";
-//    }
 
     @GetMapping("/user/training")
     public String getTraining(Map<String, Object> model) {
@@ -106,6 +99,7 @@ public class UserController {
     public String getResult(Map<String, String> model) {
         model.put("error_counter", my_error_counter);
         model.put("speed_counter", my_speed_counter);
+        model.put("status", my_status);
         return "result";
     }
 
@@ -115,7 +109,10 @@ public class UserController {
         String name = auth.getName();//get logged in username
         User user = (User) userService.loadUserByUsername(name);
         model.put("user", user);
-        model.put("statistics",statisticsService.getAll());
+        model.put("statistics", statisticsService.getAll());
+        model.put("statistica150", (double)statisticsService.getAllLess(50)/(double)statisticsService.getAll().size()*100);
+        model.put("statistica150400",  (double)statisticsService.getAllLess( 50,400)/(double)statisticsService.getAll().size()*100);
+        model.put("statistica400", (double)statisticsService.getAllMore(400)/(double)statisticsService.getAll().size()*100);
         return "stats";
     }
 
@@ -125,7 +122,7 @@ public class UserController {
         String name = auth.getName();//get logged in username
         User user = (User) userService.loadUserByUsername(name);
         model.put("user", user);
-        model.put("statistics",statisticsService.getAllByUser(user.getId()));
+        model.put("statistics", statisticsService.getAllByUser(user.getId()));
         return "userStats";
     }
 
@@ -138,7 +135,6 @@ public class UserController {
         }
         return "editProfile";
     }
-
 
 
     @PostMapping("/user/trainingParameters")
@@ -174,6 +170,7 @@ public class UserController {
         statisticsService.saveStatistics(statistics);
         my_error_counter = numberOfMistakes;
         my_speed_counter = averageSpeed;
+        my_status=status;
         return "redirect:result";
     }
 }

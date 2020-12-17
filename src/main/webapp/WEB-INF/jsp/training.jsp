@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="vk_loader.js?vk_layout=CN%20Chinese%20Simpl.%20Pinyin&vk_skin=flat_gray" ></script>
-    <title>Log in with your account</title>
+    <title>Тренировка</title>
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"> -->
+    <link href="../../resources/css/templatemo_style.css" rel="stylesheet" type="text/css"/>
 
 
 
@@ -32,22 +33,30 @@
     </style>
 </head>
 <body onload="init()">
-<form method="post" name="myResult">
+<script src="../../resources/js/virtualkeyboard.js"></script>
+<div id="templatemo_body_wrapper">
+    <div id="templatemo_wrapper">
+
+        <div id="templatemo_header">
+
+            <div id="site_title"><h1>Тренировка</h1></div>
+        </div> <!-- end of templatemo header -->
+
+        <form method="post" name="myResult">
 <section class="hero is-primary is-large">
     <!-- воспользуемся готовым элементом hero из bulma -->
-    <h class="label is-size-4" align="right">${pageContext.request.userPrincipal.name}</h>
-    <h>Ваш уровень: ${user.level}</h>
+    <h4 style="color: #550055; font-weight: bold;" class="enter" align="right">Логин пользователя:${pageContext.request.userPrincipal.name}</h4>
+    <h4 class="userpage2" style="color:#550055; position: relative; left:700px;bottom:10px;" align="middle"><b>Текущий уровень: ${user.level}</b></h4>
     <input id="exercise" type="hidden" name="exercise" value="${exercise.exercise}"/>
-    <input id="maxNumberOfErrors" type="hidden" name="maxNumberOfErrors" value="${exercise.maxNumberOfErrors}"/>
-    <input id="pressingTime" type="hidden" name="pressingTime" value="${exercise.pressingTime}"/>
+    <input id="maxNumberOfErrors" type="hidden" name="maxNumberOfErrors" value="${exercise.myDifficultyLevel.maxNumberOfErrors}"/>
+    <input id="pressingTime" type="hidden" name="pressingTime" value="${exercise.myDifficultyLevel.pressingTime}"/>
     <div class="hero-head container">
-        <h1 class="label is-size-3 has-text-white promo"> Наш простой тренажер</h1>
-        <ul>
-            <li><h3 class="label is-size-4 has-text-link has-text-centered"><span name="error_counter" id="error_counter">0</span> Ошибок</h3></li>
-            <li><h3 class="label is-size-4 has-text-link has-text-centered"><span name="speed_counter" id="speed_counter">0</span> Зн./мин</h3></li>
-            <li><input onclick="newGame()" value= "Начать заново" type="button"></li>
-            <li><a href="/user/trainingParameters">Настройки</a></li>
-        </ul>
+
+            <h3  style="text-align:center; color: #550055; font-weight: bold;" class="lab"><span  name="error_counter" id="error_counter">0</span> Ошибок</h3>
+            <h3 style="color: #550055; font-weight: bold;" class="label is-size-4 has-text-link has-text-centered"><span name="speed_counter" id="speed_counter">0</span> Зн./мин</h3>
+            <input class="butggton" onclick="newGame()" value= "Начать заново" type="button">
+           <a class="butggton" href="/user/trainingParameters">Настройки</a>
+
         <progress id="prog" class="progress is-danger" value="0" max="20"></progress>
         <h3 class="label is-size-5 has-text-white has-text-centered begin">Press Enter to Start</h3>
     </div>

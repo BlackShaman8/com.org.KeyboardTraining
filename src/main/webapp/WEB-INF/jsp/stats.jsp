@@ -33,7 +33,7 @@
     </script>
 
 </head>
-<body>
+<body  style="  background-attachment: fixed;">
 <div id="templatemo_body_wrapper">
     <div id="templatemo_wrapper">
 
@@ -41,23 +41,17 @@
             <div id="site_title" ><h1>Общая статистика</h1></div>
         </div> <!-- end of templatemo header -->
         <sec:authorize access="hasRole('USER')">
-        <div id="templatemo_menu">
-            <ul>
-
-                    <li><a href="/user/trainingParameters">Тренировка</a></li>
-                    <li>
-                        <a href="/user/userStats">Моя статистика</a></li>
-
-                <li></li>
-            </ul>
+    <DIV>
+        <a style="right:370px;top:30px;" class="butggton" href="/user/trainingParameters">Тренировка</a>
+        <a style="right:160px;bottom:21px;" class="butggton" href="/user/userStats">Моя статистика</a>
         </div> <!-- end of templatemo_menu -->
         </sec:authorize>
         <div>
-            <h4 id="userst" style="top:30px;font-weight: bold;color: #550055" class="enter">Логин пользователя: ${pageContext.request.userPrincipal.name}</h4>
+            <h4 id="userst" style="bottom:60px;font-weight: bold;color: #550055" class="enter">Логин пользователя: ${pageContext.request.userPrincipal.name}</h4>
         </div>
 
         <div>
-            <table style="position: relative;top:30px">
+            <table style="position: relative; bottom:30px;">
                 <tr>
                     <th>Дата</th>
                     <th>Уровень</th>
@@ -81,20 +75,19 @@
                 <!--ряд с ячейками тела таблицы-->
 
             </table>
-            <a style="right:10px; position: relative; top:40px;width: 150px;height: 20px;"  class="butggton" href="/">Назад</a>
+            <a style="right:10px; position: relative; top:50px;width: 150px;height: 20px;"  class="butggton" href="/">Назад</a>
         </div>
 
         <div style="position: relative" class="canvas">
-
             <svg class="chart" width="400" height="400" style="position:relative; left:495px; top:30px;" viewBox="0 0 50 50">
-                <circle style="fill:none;  stroke-width: 10;  stroke: #3498db;   stroke-dasharray: 33 100;" id="unit" r="15.9" cx="50%" cy="50%"/>
-                <circle style="fill:none;  stroke-width: 10;  stroke: #FF3399;   stroke-dasharray: 33 100;stroke-dashoffset: -33;" id="unit" r="15.9" cx="50%" cy="50%"/>
-                <circle style="fill:none;  stroke-width: 10;   stroke: #550055;  stroke-dasharray: 34 100; stroke-dashoffset: -66; id="unit" r="15.9" cx="50%" cy="50%"/>
+                <circle style="fill:none;  stroke-width: 10;  stroke: #3498db;   stroke-dasharray: ${statistica150} 100;" id="unit" r="15.9" cx="50%" cy="50%"/>
+                <circle style="fill:none;  stroke-width: 10;  stroke: #FF3399;   stroke-dasharray: ${statistica150400} 100;stroke-dashoffset: -${statistica150};" id="unit" r="15.9" cx="50%" cy="50%"/>
+                <circle style="fill:none;  stroke-width: 10;   stroke: #550055;  stroke-dasharray: ${statistica400} 100; stroke-dashoffset: -${statistica150}-${statistica150400}; id="unit" r="15.9" cx="50%" cy="50%"/>
             </svg>
             <div style="position:relative;right:480px;top:30px; " >
                 <ul class="caption-list">
-                    <li class="caption-item"> <150 знаков/минуту </li>
-                    <li class="caption-item">от 150 до 400 знаков/минуту</li>
+                    <li class="caption-item"> <50 знаков/минуту </li>
+                    <li class="caption-item">от 50 до 400 знаков/минуту</li>
                     <li class="caption-item">от 400 знаков/минуту</li>
                 </ul>
             </div>

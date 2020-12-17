@@ -36,9 +36,9 @@
             <div id="site_title"><h1>Статистика пользователя</h1></div>
         </div> <!-- end of templatemo header -->
         <sec:authorize access="hasRole('USER')">
-            <a style="right:370px;top:20px;" href="/user/trainingParameters" class="butggton">Тренировка</a>
+            <a style="right:100px;top:20px;" href="/user/trainingParameters" class="butggton">Тренировка</a>
         </sec:authorize>
-        <a style="right:160px;bottom:31px;" href="/stats" class="butggton">Общая статистика</a>
+        <a style="right:360px;bottom:30px;" href="/stats" class="butggton">Общая статистика</a>
         <sec:authorize access="hasRole('USER')">
             <div>
                 <h4 style="bottom:80px;color: #550055; font-weight: bold " align="right" class="enter">Логин
@@ -47,12 +47,12 @@
         </sec:authorize>
         <sec:authorize access="hasRole('ADMIN')">
             <div>
-                <h4 style="bottom:128px;color: #550055; font-weight: bold" align="right" class="enter">Логин
+                <h4 style="bottom:50px;color: #550055; font-weight: bold" align="right" class="enter">Логин
                     пользователя: ${user.login}</h4>
             </div>
         </sec:authorize>
         <div>
-            <table style="bottom:50px;position: relative;">
+            <table style="bottom:30px;position: relative;">
                 <tr>
                     <th>Дата</th>
                     <th>Уровень</th>

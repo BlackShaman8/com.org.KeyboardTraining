@@ -13,6 +13,7 @@ body {
     background-repeat: repeat-x;
     background-position: top;
     background-image: url(../../resources/images/siren-tsvety-myshka-klaviatura-ruchka.jpg);
+    background-attachment: scroll;
 
 }
 
@@ -931,3 +932,7 @@ button.butggton:after {
 
 .lab
 {color: #550055; font-weight: bold }
+
+input:invalid {
+    border:solid red;
+}

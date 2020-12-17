@@ -21,10 +21,10 @@
                 <h4  class="edit" style="color:#550055;left:291px;"></h4>
                 <h4  class="edit" style="color:#550055;left:291px;"><b>Логин:&nbsp&nbsp&nbsp&nbsp</b>
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <form:input style="width:160px" type="text" path="login" class="col" name="login" align="middle"
+                    <form:input style="width:170px" type="text" path="login" class="col" name="login" align="middle"
                                 placeholder="Логин пользователя" minLength="2" maxlength="8"></form:input></h4>
-                    <form:errors  path="login"></form:errors>
-                        ${usernameError}</h4>
+               <form:errors  style="color:#550055;left:291px;" path="login"></form:errors>
+                <h4 style="color:#550055;left:291px;">  ${usernameError}</h4>
                 <h4  class="edit" style="color:#550055;left:291px;"><b>Пароль:&nbsp&nbsp </b>
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <form:input type="password" path="password" class="col" name="password" align="middle"

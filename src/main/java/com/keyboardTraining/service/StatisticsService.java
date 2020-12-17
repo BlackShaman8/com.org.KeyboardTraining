@@ -9,19 +9,50 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class StatisticsService  {
+public class StatisticsService {
     @Autowired
     private StatisticRepos statisticRepos;
 
-    public List<Statistics> getAll(){
+    public List<Statistics> getAll() {
         return (List<Statistics>) statisticRepos.findAll();
     }
 
-    public List<Statistics> getAllByUser(Long userId){
+    public List<Statistics> getAllByUser(Long userId) {
         return (List<Statistics>) statisticRepos.getAllByUserId(userId);
     }
 
-    public void saveStatistics(Statistics statistics){
+    public void saveStatistics(Statistics statistics) {
         statisticRepos.save(statistics);
+    }
+
+    public int getAllLess(double less) {
+        int count = 0;
+        List<Statistics> list = (List<Statistics>) statisticRepos.findAll();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getAverageSpeed() < less)
+                count++;
+        }
+
+        return count;
+    }
+
+    public int getAllLess(double more, double less) {
+        int count = 0;
+        List<Statistics> list = (List<Statistics>) statisticRepos.findAll();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getAverageSpeed() < less && list.get(i).getAverageSpeed() > more)
+                count++;
+        }
+        return count;
+    }
+
+    public int getAllMore(double more) {
+        int count = 0;
+        List<Statistics> list = (List<Statistics>) statisticRepos.findAll();
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getAverageSpeed() > more)
+                count++;
+        }
+        return count;
     }
 }

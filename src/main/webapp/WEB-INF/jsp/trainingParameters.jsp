@@ -29,19 +29,19 @@
         <div>
             <form method="POST">
             <h4 id="trpar" style="color: #550055; font-weight: bold;" class="enter">Логин пользователя: ${pageContext.request.userPrincipal.name}</h4>
-            <h4 id="trpar" class="enter">Уровень:&nbsp&nbsp&nbsp&nbsp
+            <h4 id="trpar" style="color: #550055; font-weight: bold;" class="enter">Уровень:&nbsp&nbsp&nbsp&nbsp
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp${user.level}</h4>
-            <h4 id="list1" class="enter">Выберите уровень сложности:
-                <select id="difficultyLevel" onchange="changeSelect()">
+            <h4 id="list1" style="color: #550055; font-weight: bold;" class="enter">Выберите уровень сложности:
+                <select style="color: #550055; font-weight: bold;" id="difficultyLevel" onchange="changeSelect()">
                     <c:forEach items="${allDifficultyLevel}" var="difficultyLevel">
                         <option> ${difficultyLevel.id}</option>
                     </c:forEach>
                 </select></h4>
-            <h4 id="list1" class="enter">Выберите упражнение:
+            <h4 style="color: #550055; font-weight: bold;" id="list1" class="enter">Выберите упражнение:
                 <h4 class="exerciseSelection">
-                    <select id="sel idLevel" name ="section" <%--onchange="createTraining()"--%>>
+                    <select style="color: #550055; font-weight: bold;" id="sel idLevel" name ="section" <%--onchange="createTraining()"--%>>
                         <c:forEach items="${exercisesLevel1}" var="exercise">
-                            <option value=" ${exercise.id}">
+                            <option style="color: #550055; font-weight: bold;" value=" ${exercise.id}">
                                     ${exercise.exercise}
                             </option>
                         </c:forEach>
