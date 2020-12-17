@@ -27,15 +27,15 @@
                 <h4  style="color: #550055;left:330px; position: relative;top:30px; font-weight: bold;" >Логин пользователя:${pageContext.request.userPrincipal.name}</h4>
                 <h4 style="color: #550055;left:300px; position: relative;top:30px; font-weight: bold;">Логин: &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <input type="text" class="col" name="login" align="middle" placeholder="Логин пользователя"></h4>
+                    <input type="text" class="col" name="login" align="middle" placeholder="Логин пользователя" minLength="2" maxlength="8"></h4>
                 <h4 style="color: #550055;left:300px; position: relative;top:30px; font-weight: bold;">Пароль:
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <input type="text" class="col" name="password" align="middle" placeholder="Пароль"></h4>
+                    <input type="text" class="col" name="password" align="middle" placeholder="Пароль" minLength="4" maxlength="12"></h4>
                 <h4 style="color: #550055;left:300px; position: relative;top:30px; font-weight: bold;">Повторите пароль: <input type="text" class="col" name="passwordConfirm" align="middle"
-                                                                     placeholder="Пароль"></h4>
+                                                                     placeholder="Пароль" minLength="4" maxlength="12"></h4>
                 <input type="hidden" name="id" value="${user.id}">
                 <div><button type="submit" style="right:100px;position: relative;top:30px;width: 160px;" class="butggton" >Сохранить</button>
-                    <a style="left:91px; position: relative; bottom:21px;width: 150px;"  class="butggton" href="/">Отменить</a></div>
+                    <a style="left:91px; position: relative; bottom:21px;width: 150px;"  class="butggton" href="/">Назад</a></div>
 
             </div>
         </form>

@@ -40,7 +40,7 @@
                         <td>${difficultyLevel.maxLength}</td>
                         <td>${difficultyLevel.maxNumberOfErrors}</td>
                         <td>${difficultyLevel.pressingTime}</td>
-                        <td><a id="buttonedit" class="c-button" href="editDifficultyLevel/${difficultyLevel.id}">Изменить</a>
+                        <td><a style="margin: 0  0 0 0;border: none; height:auto; " id="buttonedit" class="butggton" href="editDifficultyLevel/${difficultyLevel.id}">Изменить</a>
                         </td>
                     </tr>
                     <!--ряд с ячейками заголовков-->

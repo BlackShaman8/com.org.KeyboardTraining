@@ -1,6 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -25,11 +26,6 @@
     <!-- / fim dos arquivos utilizados pelo jQuery lightBox plugin -->
 
     <!-- Ativando o jQuery lightBox plugin -->
-    <script type="text/javascript">
-        $(function () {
-            $('#gallery a.box').lightBox();
-        });
-    </script>
 
 </head>
 <body>
@@ -39,15 +35,22 @@
         <div id="templatemo_header">
             <div id="site_title"><h1>Статистика пользователя</h1></div>
         </div> <!-- end of templatemo header -->
-
-                    <a style="right:370px;top:20px;" href="/user/trainingParameters" class="butggton">Тренировка</a>
-                    <a style="right:160px;bottom:31px;" href="stats" class="butggton">Общая статистика</a>
-                    <a style="left:50px;bottom:82px;width:170px;" href="User.html" class="butggton">Выход</a>
-
-        <div>
-            <h4 style="bottom:128px;color: #550055" align="right" class="enter">Логин пользователя:  ${pageContext.request.userPrincipal.name}</h4>
-        </div>
-
+        <sec:authorize access="hasRole('USER')">
+            <a style="right:370px;top:20px;" href="/user/trainingParameters" class="butggton">Тренировка</a>
+        </sec:authorize>
+        <a style="right:160px;bottom:31px;" href="/stats" class="butggton">Общая статистика</a>
+        <sec:authorize access="hasRole('USER')">
+            <div>
+                <h4 style="bottom:128px;color: #550055" align="right" class="enter">Логин
+                    пользователя: ${pageContext.request.userPrincipal.name}</h4>
+            </div>
+        </sec:authorize>
+        <sec:authorize access="hasRole('ADMIN')">
+            <div>
+                <h4 style="bottom:128px;color: #550055" align="right" class="enter">Логин
+                    пользователя: ${user.login}</h4>
+            </div>
+        </sec:authorize>
         <div>
             <table style="bottom:100px;position: relative;">
                 <tr>
@@ -59,27 +62,20 @@
                     <th>Кол-во ошибок</th>
                     <th>Статус</th>
                 </tr> <!--ряд с ячейками заголовков-->
-                <tr>
-                    <td>Вау</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>Вау</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <!--ряд с ячейками тела таблицы-->
+                <c:forEach items="${statistics}" var="statistics">
+                    <tr>
+                        <td>${statistics.date}</td>
+                        <td>${statistics.exercise.myDifficultyLevel.id}</td>
+                        <td>${statistics.exercise.id}</td>
+                        <td>${statistics.transitTime}</td>
+                        <td>${statistics.averageSpeed}</td>
+                        <td>${statistics.numberOfMistakes}</td>
+                        <td>${statistics.status}</td>
+                    </tr>
+                </c:forEach>
 
             </table>
+            <a style="right:10px; position: relative; top:40px;width: 150px;" id="buttonedit" class="butggton" href="/">Назад</a>
         </div>
 
         <div class="cleaner"></div>

@@ -32,16 +32,19 @@
     </style>
 </head>
 <body onload="init()">
+<form method="post" name="myResult">
 <section class="hero is-primary is-large">
     <!-- воспользуемся готовым элементом hero из bulma -->
     <h class="label is-size-4" align="right">${pageContext.request.userPrincipal.name}</h>
     <h>Ваш уровень: ${user.level}</h>
-    <input id="exercise" type="text" name="exercise" value="${exercise.exercise}"/>
+    <input id="exercise" type="hidden" name="exercise" value="${exercise.exercise}"/>
+    <input id="maxNumberOfErrors" type="hidden" name="maxNumberOfErrors" value="${exercise.maxNumberOfErrors}"/>
+    <input id="pressingTime" type="hidden" name="pressingTime" value="${exercise.pressingTime}"/>
     <div class="hero-head container">
         <h1 class="label is-size-3 has-text-white promo"> Наш простой тренажер</h1>
         <ul>
-            <li><h3 class="label is-size-4 has-text-link has-text-centered"><span id="error_counter">0</span> Ошибок</h3></li>
-            <li><h3 class="label is-size-4 has-text-link has-text-centered"><span id="speed_counter">0</span> Зн./мин</h3></li>
+            <li><h3 class="label is-size-4 has-text-link has-text-centered"><span name="error_counter" id="error_counter">0</span> Ошибок</h3></li>
+            <li><h3 class="label is-size-4 has-text-link has-text-centered"><span name="speed_counter" id="speed_counter">0</span> Зн./мин</h3></li>
             <li><input onclick="newGame()" value= "Начать заново" type="button"></li>
             <li><a href="/user/trainingParameters">Настройки</a></li>
         </ul>
@@ -59,8 +62,12 @@
         </div>
     </div>
 </section>
-<form method="post" name="myResult">
-    <input class="btnResult" type="submit" />
+    <input name="exerciseinput" type="hidden" value="${exercise.id}"/>
+    <input name="transitTime" type="hidden" id="transitTime"/>
+    <input name="averageSpeed" type="hidden" id="input_speed_counter" />
+    <input name="numberOfMistakes" type="hidden" id="input_error_counter" />
+    <input name="status" type="hidden" id="status" value="false"/>
+    <input class="btnResult" type="submit" style="display:none"/>
 </form>
 <script type="text/javascript" charset="windows-1251">
     <%@include file="../../resources/js/code.js"%>

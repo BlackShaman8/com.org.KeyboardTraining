@@ -1,6 +1,7 @@
 package com.keyboardTraining.controllers;
 
 import com.keyboardTraining.model.User;
+import com.keyboardTraining.service.StatisticsService;
 import com.keyboardTraining.service.UserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,9 +17,11 @@ import java.util.Map;
 @Controller
 public class AdminController {
     private final UserService userService;
+    private final StatisticsService statisticsService;
 
-    public AdminController(UserService userService) {
+    public AdminController(UserService userService, StatisticsService statisticsService) {
         this.userService = userService;
+        this.statisticsService = statisticsService;
     }
 
     @GetMapping("/accountManagement")
@@ -34,6 +37,24 @@ public class AdminController {
         User user = (User) userService.loadUserByUsername(name);
         model.put("user", user);
         return "editProfile";
+    }
+
+    @GetMapping("/userStats/{userId}")
+    public String getStatisticsUser(Map<String, Object> model,@PathVariable String userId){
+        model.put("statistics",statisticsService.getAllByUser(Long.parseLong(userId.trim())));
+        model.put("user",userService.findUserById(Long.parseLong(userId)));
+        return "userStats";
+    }
+
+    @GetMapping("/stats")
+    public String getUserStats(Map<String, Object> model){
+        model.put("statistics",statisticsService.getAll());
+        return "stats";
+    }
+
+    @GetMapping("/about")
+    public String getAbout(){
+        return "about";
     }
 
     @PostMapping("/accountManagement")

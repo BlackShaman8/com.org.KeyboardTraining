@@ -22,33 +22,34 @@
         </div> <!-- end of templatemo header -->
 
         <div>
-            <table class="col">
+            <table class="col" align="center" style="width:50%">
                 <tr align="center">
                     <td>Уровень сложности упражнения</td>
                     <td class="col">1</td>
                 </tr> <!--ряд с ячейками заголовков-->
                 <tr align="center">
                     <td id="td1">Минимальная длина</td>
-                    <td><input type="number" name="minLength" class="col" size="1" min="20" max="200" value=${difficultyLevel.minLength}></td>
+                    <td><input type="number" style="text-align: center; width:3em;" name="minLength" class="col" size="1" min="20" max="200" value=${difficultyLevel.minLength}></td>
                 </tr>
                 <tr align="center">
                     <td>Максимальная длина</td>
-                    <td><input type="number" name="maxLength" class="col" size="1" min="20" max="200" value=${difficultyLevel.maxLength}></td>
+                    <td><input type="number" style="text-align: center; width:3em;" name="maxLength" class="col" size="1" min="20" max="200" value=${difficultyLevel.maxLength}></td>
                 </tr>
                 <tr align="center">
                     <td>Максимальное количество ошибок</td>
-                    <td><input type="number" name="maxNumberOfErrors" class="col" size="1" min="1" max="10" value=${difficultyLevel.maxNumberOfErrors}></td>
+                    <td><input type="number" style="text-align: center; width:3em;" name="maxNumberOfErrors" class="col" size="1" min="1" max="10" value=${difficultyLevel.maxNumberOfErrors}></td>
                 </tr>
                 <tr align="center">
                     <td>Минимальная скорость печати</td>
-                    <td><input type="number" name="pressingTime" class="col" step="0.1"  min="0" max="3" value=${difficultyLevel.pressingTime}></td>
+                    <td><input type="number" style="text-align: center; width:3em;"  name="pressingTime" class="col" step="0.1" min="0" max="3" value=${difficultyLevel.pressingTime}></td>
                 </tr>
                 <!--ряд с ячейками тела таблицы-->
 
             </table>
             <input type="hidden" name="difficultyLevelId" value="${difficultyLevel.id}"/>
-            <div><button type="submit" id="buttondiflevelsave" class="c-button">Сохранить</button>
-                <a id="buttondiflevelsave" class="c-button" href="/difficultyLevels">Отмена</a></div>
+            <div>
+            <button type="submit"  class="butggton" href="createExercise" style="position: relative;top: 20px;right:110px;">Сохранить</button>
+            <a  class="butggton" href="/difficultyLevels" style="position: relative;bottom:30px; left:115px;">Назад</a>
         </div>
 
 

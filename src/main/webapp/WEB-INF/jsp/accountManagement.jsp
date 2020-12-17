@@ -38,7 +38,7 @@
                             <c:forEach items="${user.roles}" var="role">${role.name}; </c:forEach>
                         <td>${user.level}</td>
                         </td>
-                        <td><a style="margin: 0  0 0 0;border: none; height:42px; " class="butggton" href="userStats">Посмотреть статистику</a></td>
+                        <td><a style="margin: 0  0 0 0;border: none; height:42px; " class="butggton" href="userStats/${user.id}">Посмотреть статистику</a></td>
                         <td>
                             <form action="${pageContext.request.contextPath}/accountManagement" method="post">
                                 <input type="hidden" name="userId" value="${user.id}"/>

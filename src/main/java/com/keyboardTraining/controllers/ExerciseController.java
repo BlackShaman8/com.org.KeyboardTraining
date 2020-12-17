@@ -41,9 +41,13 @@ public class ExerciseController {
 
     @GetMapping("/createExercise")
     public String createExercise(Model model) {
-        List<DifficultyLevel> list=difficultyLevelService.getAll();
-        for(int i=0;i<list.size();i++)
-            model.addAttribute("difficulteLevel"+i,list.get(i));
+        List<DifficultyLevel> list = difficultyLevelService.getAll();
+        for (int i = 0; i < list.size(); i++)
+            model.addAttribute("difficulteLevel" + i, list.get(i));
+        if (exerciseService.getAll().size() != 0) {
+            model.addAttribute("number", exerciseService.getAll().get(exerciseService.getAll().size() - 1).getId() + 1);
+        } else
+            model.addAttribute("number", "0");
         return "createExercise";
     }
 
