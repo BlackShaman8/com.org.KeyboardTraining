@@ -41,18 +41,18 @@
         <a style="right:160px;bottom:31px;" href="/stats" class="butggton">Общая статистика</a>
         <sec:authorize access="hasRole('USER')">
             <div>
-                <h4 style="bottom:128px;color: #550055" align="right" class="enter">Логин
+                <h4 style="bottom:80px;color: #550055; font-weight: bold " align="right" class="enter">Логин
                     пользователя: ${pageContext.request.userPrincipal.name}</h4>
             </div>
         </sec:authorize>
         <sec:authorize access="hasRole('ADMIN')">
             <div>
-                <h4 style="bottom:128px;color: #550055" align="right" class="enter">Логин
+                <h4 style="bottom:128px;color: #550055; font-weight: bold" align="right" class="enter">Логин
                     пользователя: ${user.login}</h4>
             </div>
         </sec:authorize>
         <div>
-            <table style="bottom:100px;position: relative;">
+            <table style="bottom:50px;position: relative;">
                 <tr>
                     <th>Дата</th>
                     <th>Уровень</th>

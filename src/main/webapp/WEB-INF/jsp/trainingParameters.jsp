@@ -28,7 +28,7 @@
 
         <div>
             <form method="POST">
-            <h4 id="trpar" class="enter">Логин пользователя: ${pageContext.request.userPrincipal.name}</h4>
+            <h4 id="trpar" style="color: #550055; font-weight: bold;" class="enter">Логин пользователя: ${pageContext.request.userPrincipal.name}</h4>
             <h4 id="trpar" class="enter">Уровень:&nbsp&nbsp&nbsp&nbsp
                 &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp${user.level}</h4>
             <h4 id="list1" class="enter">Выберите уровень сложности:
@@ -48,8 +48,8 @@
                     </select></h4>
             </h4>
 
-            <div><button type="submit" id="buttontrpar" class="butggton">Начать тренировку</button></div>
-            <div><a id="buttontrpar" class="butggton" href="/">Назад</a></div>
+            <div><button type="submit"  class="butggton">Начать тренировку</button></div>
+            <div><a  class="butggton" href="/">Назад</a></div>
 
             </form>
         </div>

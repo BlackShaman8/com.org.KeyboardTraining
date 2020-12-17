@@ -928,3 +928,6 @@ button.butggton:after {
 .caption-item:nth-child(3)::before {
     background-color:#550055;
 }
+
+.lab
+{color: #550055; font-weight: bold }

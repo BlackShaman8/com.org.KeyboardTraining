@@ -38,7 +38,7 @@
     <div id="templatemo_wrapper">
 
         <div id="templatemo_header">
-            <div id="site_title" ><h1>Статистика пользователя</h1></div>
+            <div id="site_title" ><h1>Общая статистика</h1></div>
         </div> <!-- end of templatemo header -->
         <sec:authorize access="hasRole('USER')">
         <div id="templatemo_menu">
@@ -81,7 +81,7 @@
                 <!--ряд с ячейками тела таблицы-->
 
             </table>
-            <a style="right:10px; position: relative; top:40px;width: 150px;" id="buttonedit" class="butggton" href="/">Назад</a>
+            <a style="right:10px; position: relative; top:40px;width: 150px;height: 20px;"  class="butggton" href="/">Назад</a>
         </div>
 
         <div style="position: relative" class="canvas">
