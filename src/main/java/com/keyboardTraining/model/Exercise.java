@@ -1,8 +1,13 @@
 package com.keyboardTraining.model;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
 
 @Entity
+@XmlRootElement(name = "Exercise")
+@XmlType(propOrder = {"myDifficultyLevel","exercise"})
 public class Exercise {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,7 +19,7 @@ public class Exercise {
     public Exercise() {
     }
 
-
+@XmlTransient
     public Long getId() {
         return id;
     }

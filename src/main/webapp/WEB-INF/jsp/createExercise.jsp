@@ -49,19 +49,18 @@
                     <input type="hidden" name="maxLength" value="${difficulteLevel0.maxLength}"/>
                     </span>
                     <div class="cleaner_h10"></div>
-
                     <a style="position: relative; padding:5px 3px; width: 100px; left: 200px; bottom: 140px"
                        class="butggton" href="#" onclick="autoExercise()">Авто</a>
-                    <a style="position: relative; padding:5px 3px; width: 100px; left: 350px; bottom: 192px"
-                       class="butggton" href="#">Загрузить</a>
+                    <td>
+
+                            <input type="file" name="fileName"/>
+                            <button name="buttonCreate" style="margin: 0  0 0 0;border: none;height: auto" type="submit" class="butggton" value="load">Загрузить</button >
+
+                    </td>
 
                     <input type="hidden" name="action" value="create"/>
-                    <button type="submit"
-                            style="position: relative; padding:5px 3px;width: 110px;left: 200px; bottom: 199px"
-                            class="butggton">Создать
-                    </button>
-                    <a style="position: relative; padding:5px 3px; left: 350px; bottom: 251px; width: 100px; "
-                       class="butggton" href="/exercises">Назад</a>
+                    <button name="buttonCreate" type="submit" style="position: relative; padding:5px 3px;width: 110px;left: 200px; bottom: 199px" class="butggton" value="create">Создать</button>
+                    <a style="position: relative; padding:5px 3px; left: 350px; bottom: 251px; width: 100px; " class="butggton" href="/exercises">Назад</a>
 
 
                 </div>

@@ -4,9 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 @Entity
-public class DifficultyLevel {
+@XmlRootElement(name="DifficultyLevel")
+@XmlType(propOrder = {"maxLength","minLength","maxNumberOfErrors","pressingTime"})
+public class DifficultyLevel{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
@@ -17,7 +22,7 @@ public class DifficultyLevel {
 
     public DifficultyLevel() {
     }
-
+@XmlAttribute
     public Long getId() {
         return id;
     }

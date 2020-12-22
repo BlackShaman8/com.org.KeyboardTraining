@@ -1,5 +1,6 @@
 package com.keyboardTraining.controllers;
 
+import com.keyboardTraining.JaxbWorker;
 import com.keyboardTraining.model.DifficultyLevel;
 import com.keyboardTraining.model.Exercise;
 import com.keyboardTraining.service.DifficultyLevelServiceImpl;
@@ -52,13 +53,32 @@ public class ExerciseController {
     }
 
     @PostMapping("/createExercise")
-    public String createNewExercise(@RequestParam String difficultyLevel, @RequestParam String exercise) {
-        Exercise ex = new Exercise();
-        ex.setMyDifficultyLevel(difficultyLevelService.getDifficultyLevel(Long.parseLong(difficultyLevel)));
-        ex.setExercise(exercise);
-        exerciseService.saveExercise(ex);
+    public String createNewExercise(@RequestParam String difficultyLevel, @RequestParam String exercise,@RequestParam String buttonCreate,@RequestParam String fileName) {
+        if(buttonCreate.equals("create")) {
+            Exercise ex = new Exercise();
+            ex.setMyDifficultyLevel(difficultyLevelService.getDifficultyLevel(Long.parseLong(difficultyLevel)));
+            ex.setExercise(exercise);
+            exerciseService.saveExercise(ex);
+            return "redirect:/exercises";
+        }
+        else{
+            Exercise unmarshExercise = JaxbWorker.fromXmlToObject(fileName);
+            if (unmarshExercise != null) {
+                exerciseService.saveExercise(unmarshExercise);
+            }
+            return "redirect:/exercises";
+        }
+    }
+
+    @PostMapping("/exercises/save")
+    public String postExerciseSave(@RequestParam String exerciseId) {
+        String file = "exercises"+exerciseId+".XML";
+        Exercise exercise = exerciseService.getExercise(Long.parseLong(exerciseId));
+        JaxbWorker.convertObjectToXml(exercise, file);
         return "redirect:/exercises";
     }
+
+
 
     @PostMapping("/exercises")
     public String postExercise(@RequestParam String exerciseId) {

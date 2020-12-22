@@ -7,6 +7,7 @@
     <script type="text/javascript" charset="windows-1251">
         <%@include file="../../resources/js/code.js"%>
     </script>
+
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Параметры тренировки</title>
     <meta name="keywords" content=""/>

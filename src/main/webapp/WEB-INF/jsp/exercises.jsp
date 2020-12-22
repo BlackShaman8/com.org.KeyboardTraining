@@ -26,13 +26,21 @@
                         <thead>
                         <th width="8%">Номер</th>
                         <th width="17%">Уровень сложности</th>
-                        <th>Текст упражнения</th> <th>Удаление</th>
+                        <th>Текст упражнения</th>
+                        <th>Сохранить</th>
+                        <th>Удаление</th>
                         </thead>
                         <c:forEach items="${allExercise}" var="exercise">
                             <tr >
                                 <td style="text-align: center">${exercise.id}</td>
                                 <td style="text-align: center">${exercise.myDifficultyLevel.id}</td>
                                 <td>${exercise.exercise}</td>
+                                <td>
+                                    <form action="${pageContext.request.contextPath}/exercises/save" method="post">
+                                        <input type="hidden" name="exerciseId" value="${exercise.id}"/>
+                                        <button style="margin: 0  0 0 0;border: none;height: auto" type="submit" class="butggton">Save</button >
+                                    </form>
+                                </td>
                                 <td>
                                     <form action="${pageContext.request.contextPath}/exercises" method="post">
                                         <input type="hidden" name="exerciseId" value="${exercise.id}"/>
