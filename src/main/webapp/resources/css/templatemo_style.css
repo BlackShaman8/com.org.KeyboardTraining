@@ -10,9 +10,10 @@ body {
     font-family: Tahoma, Geneva, sans-serif;
     font-size: 13px;
     line-height: 1.7em;
-    background-repeat: repeat-x;
-    background-position: top;
-    background-image: url(../../resources/images/siren-tsvety-myshka-klaviatura-ruchka.jpg);
+    background-position:top ;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url(../../resources/images/6.jpg);
     background-attachment: scroll;
 
 }
@@ -214,14 +215,14 @@ h6 {
     text-align: center;
     margin: 0;
     padding: 0;
-    color: #FF3399;
+    color: #277061;
     font-weight: bold
 }
 
 #site_title h1 {
     margin: 0;
     padding: 0;
-    color: #FF3399;
+    color: #008080;
     font-weight: bold
 }
 
@@ -315,59 +316,12 @@ h6 {
     height: 175px;
 }
 
-.fp_services_box {
-    float: left;
-    width: 260px;
-    height: 135px;
-    padding: 20px;
-    margin-right: 20px;
-    background: url(../../../../../../../Downloads/templatemo_304_light_gray/templatemo_304_light_gray/images/templamteo_service_bg.png) right center no-repeat;
-    color: #fff;
-    font-size: 16px;
-    text-decoration: none;
-}
 
-.fp_services_box .fps_title {
-    margin-bottom: 10px;
-}
-
-.fp_services_box .fps_title a {
-    color: #fff;
-    font-size: 24px;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.fp_services_box .fps_title a:hover {
-    color: #333;
-    text-shadow: 1px 1px 1px #9adacf
-}
 
 .l_box {
     margin: 0;
 }
 
-.fp_services_box a.sb_more {
-    display: block;
-    float: right;
-    width: 81px;
-    line-height: 25px;
-    text-align: center;
-    color: #000;
-    font-weight: 700;
-    text-decoration: none;
-    background: url(../../../../../../../Downloads/templatemo_304_light_gray/templatemo_304_light_gray/images/sb_more.png) no-repeat;
-    text-shadow: 1px 1px 1px #9adacf;
-}
-
-.fp_services_box a.sb_more:hover {
-    color: #fff;
-    text-shadow: 1px 1px 1px #333
-}
-
-.fp_services_box p {
-    margin-bottom: 20px
-}
 
 #templatemo_main {
     clear: both;
@@ -765,7 +719,7 @@ th {
     border-style: solid;
     border-color: #550055;
     background: #fefefe;
-    color: #550055;
+    color: #800080;
 }
 
 /* границы ячеек тела таблицы */
@@ -775,7 +729,7 @@ td {
     border-color: #550055;
     font-size: 14px;
     background: #fefefe;
-    color: #550055;
+    color: #800080;
 
 }
 
@@ -919,20 +873,108 @@ button.butggton:after {
 }
 
 .caption-item:nth-child(1)::before {
-    background-color: #3498db ;
+    background-color: #883a82 ;
 }
 
 .caption-item:nth-child(2)::before {
-    background-color: #FF3399;
+    background-color: #008080;
 }
 
 .caption-item:nth-child(3)::before {
-    background-color:#550055;
+    background-color:#c68a4a;
 }
 
 .lab
-{color: #550055; font-weight: bold }
+{color: #c68a4a; font-weight: bold }
 
 input:invalid {
     border:solid red;
+}
+
+.gradient-wrap {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to left, #9cb4e2, #ace0be);
+}
+.gradient-btn {
+    position: relative;
+    font-weight: bold !important;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    font-family: sans-serif;
+    font-size: 24px;
+    color: #388da7;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    letter-spacing: 1px;
+    transition: .5s;
+//background-color: #fff;
+    border: 4px solid #fff;
+    border-radius: 60px;
+    box-shadow: 0 5px 20px rgba(0,0,0, .5);
+    overflow: hidden;
+    padding:10px 14px !important;
+}
+
+.gradient-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #9cb4e2, #ace0be);
+    z-index: -1;
+    border-radius: 60px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .5s ease-in-out;
+}
+.gradient-btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+button.gradient-btn
+{
+    position: relative;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 40px;
+    line-height:5px;
+    font-family: sans-serif;
+    font-size: 12px;
+    color: #388da7;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    letter-spacing: 1px;
+    transition: .5s;
+background-color: transparent;
+    border: 4px solid #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0, .5);
+    overflow: hidden;
+    padding:7px 14px !important;
+}
+button.gradient-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #9cb4e2, #ace0be);
+    z-index: -1;
+    border-radius: 60px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform .5s ease-in-out;
+}
+button.gradient-btn:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+button:focus {
+    outline: none !important
 }

@@ -40,16 +40,16 @@
                     <td><input type="number" style="text-align: center; width:3em;" name="maxNumberOfErrors" class="col" size="1" min="1" max="10" value=${difficultyLevel.maxNumberOfErrors}></td>
                 </tr>
                 <tr align="center">
-                    <td>Минимальная скорость печати</td>
+                    <td>Максимальное время нажатия</td>
                     <td><input type="number" style="text-align: center; width:3em;"  name="pressingTime" class="col" step="0.1" min="0" max="3" value=${difficultyLevel.pressingTime}></td>
                 </tr>
                 <!--ряд с ячейками тела таблицы-->
 
             </table>
             <input type="hidden" name="difficultyLevelId" value="${difficultyLevel.id}"/>
-            <div>
-            <button type="submit"  class="butggton" href="createExercise" style="position: relative;top: 20px;right:110px;">Сохранить</button>
-            <a  class="butggton" href="/difficultyLevels" style="position: relative;bottom:30px; left:115px;">Назад</a>
+            <div align="center">
+            <button type="submit"  class="gradient-btn" href="createExercise" style="width:130px;top:40px;left:30px">Сохранить</button>
+            <a  class="gradient-btn" href="/difficultyLevels" style="top:20px">Назад</a>
         </div>
 
 

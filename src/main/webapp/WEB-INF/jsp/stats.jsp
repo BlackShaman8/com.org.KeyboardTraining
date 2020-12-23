@@ -16,55 +16,48 @@
           href="../../../../../../../Downloads/templatemo_304_light_gray_new/templatemo_304_light_gray/css/jquery.lightbox-0.5.css"/>
 
     <!-- Arquivos utilizados pelo jQuery lightBox plugin -->
-    <script type="text/javascript"
-            src="../../../../../../../Downloads/templatemo_304_light_gray_new/templatemo_304_light_gray/js/jquery.js"></script>
-    <script type="text/javascript"
-            src="../../../../../../../Downloads/templatemo_304_light_gray_new/templatemo_304_light_gray/js/jquery.lightbox-0.5.js"></script>
-    <link rel="stylesheet" type="text/css"
-          href="../../../../../../../Downloads/templatemo_304_light_gray_new/templatemo_304_light_gray/css/jquery.lightbox-0.5.css"
-          media="screen"/>
-    <!-- / fim dos arquivos utilizados pelo jQuery lightBox plugin -->
-
-    <!-- Ativando o jQuery lightBox plugin -->
-    <script type="text/javascript">
-        $(function () {
-            $('#gallery a.box').lightBox();
-        });
-    </script>
 
 </head>
-<body  style="  background-attachment: fixed;">
+<body id="top" style="  background-attachment: fixed;">
 <div id="templatemo_body_wrapper">
     <div id="templatemo_wrapper">
 
         <div id="templatemo_header">
-            <div id="site_title" ><h1>Общая статистика</h1></div>
+            <div id="site_title"><h1>Общая статистика</h1></div>
         </div> <!-- end of templatemo header -->
         <sec:authorize access="hasRole('USER')">
-    <DIV>
-        <a style="right:370px;top:30px;" class="butggton" href="/user/trainingParameters">Тренировка</a>
-        <a style="right:160px;bottom:21px;" class="butggton" href="/user/userStats">Моя статистика</a>
-        </div> <!-- end of templatemo_menu -->
+            <DIV>
+                <a style="top:20px;" class="gradient-btn" href="/user/trainingParameters">Тренировка</a>
+                <a style="top:20px;left:20px" class="gradient-btn" href="/user/userStats">Моя статистика</a>
+            </div>
+            <!-- end of templatemo_menu -->
         </sec:authorize>
-        <div>
-            <h4 id="userst" style="bottom:60px;font-weight: bold;color: #550055" class="enter">Логин пользователя: ${pageContext.request.userPrincipal.name}</h4>
+        <sec:authorize access="hasRole('ADMIN')">
+            <DIV style="height: 50px;">
+            </div>
+            <!-- end of templatemo_menu -->
+        </sec:authorize>
+        <div style="height: 50px;"></div>
+        <div align="center">
+            <h4  style="bottom:45px;font-weight: bold;color: #883a82;width:400px;" class="enter">
+                Логин пользователя: ${pageContext.request.userPrincipal.name}</h4>
         </div>
 
         <div>
             <table style="position: relative; bottom:30px;">
-                <tr>
+                <tr align="center">
                     <th>Дата</th>
-                    <th>Уровень</th>
+                    <th>Логин</th>
                     <th>№ упражнения</th>
                     <th>Время прохождения</th>
                     <th>Скорость печати</th>
-                    <th>Кол-во ошибок</th>
+                    <th>Количество ошибок</th>
                     <th>Статус</th>
                 </tr> <!--ряд с ячейками заголовков-->
                 <c:forEach items="${statistics}" var="statistics">
-                    <tr>
+                    <tr ALIGN="center">
                         <td>${statistics.date}</td>
-                        <td>${statistics.exercise.myDifficultyLevel.id}</td>
+                        <td>${statistics.user.login}</td>
                         <td>${statistics.exercise.id}</td>
                         <td>${statistics.transitTime}</td>
                         <td>${statistics.averageSpeed}</td>
@@ -75,24 +68,32 @@
                 <!--ряд с ячейками тела таблицы-->
 
             </table>
-            <a style="right:10px; position: relative; top:50px;width: 150px;height: 20px;"  class="butggton" href="/">Назад</a>
+            <div align="center"><a style="" class="gradient-btn" href="/">Главная страница</a></div>
         </div>
 
         <div style="position: relative" class="canvas">
-            <svg class="chart" width="400" height="400" style="position:relative; left:495px; top:30px;" viewBox="0 0 50 50">
-                <circle style="fill:none;  stroke-width: 10;  stroke: #3498db;   stroke-dasharray: ${statistica150} 100;" id="unit" r="15.9" cx="50%" cy="50%"/>
-                <circle style="fill:none;  stroke-width: 10;  stroke: #FF3399;   stroke-dasharray: ${statistica150400} 100;stroke-dashoffset: -${statistica150};" id="unit" r="15.9" cx="50%" cy="50%"/>
-                <circle style="fill:none;  stroke-width: 10;   stroke: #550055;  stroke-dasharray: ${statistica400} 100; stroke-dashoffset: -${statistica150}-${statistica150400}; id="unit" r="15.9" cx="50%" cy="50%"/>
+            <svg class="chart" width="400" height="400" style="position:relative; left:495px; top:30px;"
+                 viewBox="0 0 50 50">
+                <circle style="fill:none;  stroke-width: 10;  stroke: #883a82;   stroke-dasharray: ${statistica150} 100;"
+                        id="unit" r="15.9" cx="50%" cy="50%"/>
+                <circle style="fill:none;  stroke-width: 10;  stroke: #008080;   stroke-dasharray: ${statistica150400} 100;stroke-dashoffset: -${statistica150};"
+                        id="unit" r="15.9" cx="50%" cy="50%"/>
+                <circle style="fill:none;  stroke-width: 10;   stroke: #c68a4a;  stroke-dasharray: ${statistica400} 100; stroke-dashoffset: -${statistica150}-${statistica150400}; id="
+                        unit
+                " r="15.9" cx="50%" cy="50%"/>
             </svg>
-            <div style="position:relative;right:480px;top:30px; " >
+            <div style="position:relative;right:480px;top:30px; ">
                 <ul class="caption-list">
-                    <li class="caption-item"> <50 знаков/минуту </li>
+                    <li class="caption-item"> <50 знаков/минуту</li>
                     <li class="caption-item">от 50 до 400 знаков/минуту</li>
                     <li class="caption-item">от 400 знаков/минуту</li>
                 </ul>
             </div>
-    </div> <!-- end of templatemo wrapper -->
-</div> <!-- end of templatemo body wrapper -->
+        </div> <!-- end of templatemo wrapper -->
+    </div> <!-- end of templatemo body wrapper -->
+    <div style="height: 40px;"></div>
+    <div align="center"> <a style="" class="gradient-btn" href="#">Наверх</a></div>
+</div>
 
 
 </body>

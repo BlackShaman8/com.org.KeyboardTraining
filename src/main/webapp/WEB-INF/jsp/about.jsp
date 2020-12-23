@@ -16,14 +16,14 @@
     -->
     <link href="../../resources/css/templatemo_style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body  STYLE="background-image:url(../../resources/images/siren-klaviatura-myshka-tsvety(1).jpg) !important">
+<body STYLE="background-image:url(../../resources/images/siren-klaviatura-myshka-tsvety(1).jpg) !important">
 <div id="templatemo_body_wrapper">
     <div id="templatemo_wrapper">
 
         <div id="templatemo_header">
 
-            <div id="site_title"><h1 style="color:#FF3399"><b>Самарский университет</b></h1></div>
-            <div id="site_title"><h1 style="color:#FF3399"><b></b></h1></div>
+            <div id="site_title"><h3 style="color:#008080"><b>Самарский университет</b></h3></div>
+            <div id="site_title"><h3 style="color:#FF3399"><b></b></h3></div>
 
 
         </div> <!-- end of templatemo header -->
@@ -32,25 +32,34 @@
         <div id="templatemo_main">
 
             <div>
-                <div id="site_title"><h2 style="color:#550055"><b>Дисциплина: Технологии программирования</b></h2></div>
-                <div id="site_title"><h2 style="color:#660099"><b></b></h2></div>
-                <div id="site_title"><h2 style="color:#660099"><b></b></h2></div>
+                <div id="site_title"><h3 style="color:#c68a4a;line-height: 0.5;"><b>Лабораторный практикум по
+                    дисциплине</b></h3></div>
+                <div id="site_title"><h3 style="color:#c68a4a;line-height: 0.5;"><b>"Технологии программирования"</b>
+                </h3></div>
+                <div style="height: 20px;"></div>
+                <div id="site_title"><h3 style="color:#800080;line-height: 0.5;text-align:center"><b>Тема проекта:</b>
+                </h3></div>
+                <div id="site_title"><h3 style="color:#800080;line-height: 0.5;text-align:center"><b>"Клавиатурный
+                    тренажер с функциями администратора"</b></h3></div>
+                <div id="site_title"><h2 style="color:#660099"><b> </b></h2></div>
                 <div id="site_title"><h2 style="color:#660099"><b></b></h2></div>
             </div>
             <div>
-                <div id="site_title"><h2 style="color:#FF3399;"><b>Разработчики: </b></h2></div>
-                <div id="site_title"><h2 style="color:#FF3399"><b>группа 6404 </b></h2></div>
-                <div id="site_title"><h2 style="color:#550055"><b>Сайгак Яна</b></h2></div>
-                <div id="site_title"><h2 style="color:#550055"><b> Шишкина Дарья</b></h2></div>
-                <div id="site_title"><h2 style="color:#550055"><b>Зубарев Александр</b></h2></div>
+                <div id="site_title"><h3 style="color:#c68a4a;"><b>Разработчики: </b></h3></div>
+                <div id="site_title"><h3 style="color:#c68a4a"><b>студенты группы 6404-09.03.01D </b></h3></div>
+                <div id="site_title"><h3 style="color:#800080"><b>Сайгак Яна</b></h3></div>
+                <div id="site_title"><h3 style="color:#800080"><b> Шишкина Дарья</b></h3></div>
+                <div id="site_title"><h3 style="color:#800080"><b>Зубарев Александр</b></h3></div>
 
             </div>
-            <a style="right:10px; position: relative; top:40px;width: 150px;" id="buttonedit" class="butggton" href="/">Назад</a>
+            <div style="height:30px"> </div>
+            <div align="center">
+                <a class="gradient-btn" href="/">Главная страница</a>
+            </div>
         </div> <!-- end of templatemo header -->
     </div> <!-- end of templatemo header -->
 
 </div> <!-- end of templatemo header -->
-
 
 </body>
 

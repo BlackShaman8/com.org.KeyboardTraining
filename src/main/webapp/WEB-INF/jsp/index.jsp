@@ -20,19 +20,27 @@
             <div id="templatemo_header">
                 <div id="site_title"><h1>Страница пользователя</h1></div>
             </div>
-            <div>
-                <h4 class="userpage1" style="color:#550055; position: relative; left:700px;bottom:20px;" align="middle"><b>Логин пользователя: ${pageContext.request.userPrincipal.name}</b></h4>
-                <h4 class="userpage2" style="color:#550055; position: relative; left:700px;bottom:10px;" align="middle"><b>Текущий уровень: ${user.level}</b></h4>
+            <div style="height: 30px"></div>
+            <div align="center">
+                <h4 class="userpage1" style="color:#c68a4a;width: 300px; position: relative;" align="middle"><b>Логин
+                    пользователя: ${pageContext.request.userPrincipal.name}</b></h4>
+                <h4 class="userpage2" style="color:#c68a4a; position: relative; " align="middle"><b>Текущий
+                    уровень: ${user.level}</b></h4>
 
             </div>
-            <a style="position: relative;width: 300px; right:10px;" class="butggton" href="user/editProfile">Редактировать
-                учетную запись</a>
-            <a style="right:120px; top:25px;" href="/user/userStats" class="butggton">Моя статистика</a>
-            <a style="left:100px;bottom: 26px;" href="/user/stats" class="butggton">Общая статистика</a>
-            <a style="right:120px;" href="/user/trainingParameters" class="butggton">Тренировка</a>
-            <a style="left:100px;bottom: 51px;" href="/logout" class="butggton">Выход</a>
-            <a style="position: relative;width: 300px; right:10px;" class="butggton" href="about">Информация о программе</a>
-
+            <div align="center">
+                <div><a class="gradient-btn"
+                        href="user/editProfile">Редактировать
+                    учетную запись</a></div>
+                <div><a style="" href="/user/userStats" class="gradient-btn">Моя статистика</a></div>
+                <div><a style="" href="/user/stats" class="gradient-btn">Общая статистика</a></div>
+                <div>
+                    <a href="/user/trainingParameters" class="gradient-btn">Тренировка</a></div>
+                <div><a href="/logout" class="gradient-btn">Выход</a></div>
+                <div style="height: 30px;"></div>
+                <div><a style="" class="gradient-btn" href="about">Информация о
+                    программе</a></div>
+            </div>
 
         </div>
     </div>
@@ -41,25 +49,35 @@
     <div id="templatemo_body_wrapper">
         <div id="templatemo_wrapper">
             <div id="templatemo_header">
-                <div id="site_title"style="position: relative"><h1>Администратор</h1></div>
+                <div id="site_title" style="position: relative"><h1>Администратор</h1></div>
             </div>
-            <div>
+            <div style="height: 70px;"></div>
 
-                <a style="right:10px; width:300px" class="butggton" href="/accountManagement">Управление учетными
-                    записями</a>
-            </div>
-            <div>
-                <a style="right:120px;top:20px;" class="butggton" href="exercises">Просмотр упражнений</a>
-                <a style="left:100px;bottom: 50px;" class="butggton" href="difficultyLevels">Настройка уровней
+            <div align="center">
+                <div>
+
+                    <a style="" class="gradient-btn" href="/accountManagement">Управление учетными
+                        записями</a>
+                </div>
+                <div>
+                    <a style="" class="gradient-btn" href="exercises">Просмотр
+                        упражнений</a></div>
+                <div><a style="" class="gradient-btn" href="difficultyLevels">Уровни
                     сложности</a>
-            </div>
-            <div>
-                <a style="right:120px;bottom: 40px; border: 2px solid #550055;" class="butggton"
-                   href="stats">Общая статистика</a>
-                <a style="left:100px;bottom: 90px;" class="butggton" href="/logout">Выход</a>
-            </div>
-            <div>
-            <a style="position: relative;width: 300px;bottom: 70px; right:10px;" class="butggton" href="/about">Информация о программе</a>
+                </div>
+                <div style="height:10px;"></div>
+                <div>
+                    <a style="" class="gradient-btn"
+                       href="stats">Общая статистика</a></div>
+                <div><a style="" class="gradient-btn" href="/logout">Выход</a>
+                </div>
+                <div style="height: 50px;"></div>
+
+                <div>
+
+                    <a style="" class="gradient-btn" href="/about">Информация
+                        о программе</a>
+                </div>
             </div>
         </div>
     </div>

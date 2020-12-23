@@ -18,44 +18,49 @@
         <div id="templatemo_header">
 
             <div id="site_title"><h1>Упражнения</h1></div>
+            <div style="height: 70px;"></div>
 
+            <div>
 
-                <div>
-
-                    <table style="position: relative;top:70px;">
-                        <thead>
-                        <th width="8%">Номер</th>
-                        <th width="17%">Уровень сложности</th>
-                        <th>Текст упражнения</th>
-                        <th>Сохранить</th>
-                        <th>Удаление</th>
-                        </thead>
-                        <c:forEach items="${allExercise}" var="exercise">
-                            <tr >
-                                <td style="text-align: center">${exercise.id}</td>
-                                <td style="text-align: center">${exercise.myDifficultyLevel.id}</td>
-                                <td>${exercise.exercise}</td>
-                                <td>
-                                    <form action="${pageContext.request.contextPath}/exercises/save" method="post">
-                                        <input type="hidden" name="exerciseId" value="${exercise.id}"/>
-                                        <button style="margin: 0  0 0 0;border: none;height: auto" type="submit" class="butggton">Save</button >
-                                    </form>
-                                </td>
-                                <td>
-                                    <form action="${pageContext.request.contextPath}/exercises" method="post">
-                                        <input type="hidden" name="exerciseId" value="${exercise.id}"/>
-                                        <button style="margin: 0  0 0 0;border: none;height: auto" type="submit" class="butggton">Delete</button >
-                                    </form>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </table>
-                    <a  class="butggton" href="createExercise" style="position: relative;top: 71px;right:110px;"> Создать упражнение</a>
-                    <a  class="butggton" href="/" style="position: relative;top:20px;left:115px;" >Главная страница</a>
+                <table >
+                    <thead>
+                    <th width="5%">Номер</th>
+                    <th width="5%">Уровень сложности</th>
+                    <th width="70%">Текст упражнения</th>
+                    <th width="10%">Сохранить</th>
+                    <th width="10%">Удаление</th>
+                    </thead>
+                    <c:forEach items="${allExercise}" var="exercise">
+                        <tr>
+                            <td style="text-align: center">${exercise.id}</td>
+                            <td style="text-align: center">${exercise.myDifficultyLevel.id}</td>
+                            <td>${exercise.exercise}</td>
+                            <td>
+                                <form action="${pageContext.request.contextPath}/exercises/save" method="post">
+                                    <input type="hidden" name="exerciseId" value="${exercise.id}"/>
+                                    <button style="top:20px;left:90px;" type="submit" class="gradient-btn">Сохранить</button>
+                                </form>
+                            </td>
+                            <td style=" height:50px;">
+                                <form action="${pageContext.request.contextPath}/exercises" method="post">
+                                    <input type="hidden" name="exerciseId" value="${exercise.id}"/>
+                                    <button style="top:20px;left:90px;" type="submit" class="gradient-btn">Удалить</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                </table>
+                <div style="height: 20px;"></div>
+                <div align="center">
+                    <a class="gradient-btn" href="createExercise" style="right:5px;">
+                        Создать упражнение</a>
+                    <a class="gradient-btn" href="/" style="left:5px;">Главная
+                        страница</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 </body>
 </html>

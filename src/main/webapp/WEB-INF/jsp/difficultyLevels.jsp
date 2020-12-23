@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Настройка параметров тренажера</title>
+    <title>Уровни сложности</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
 
@@ -18,19 +18,20 @@
     <div id="templatemo_wrapper">
 
         <div id="templatemo_header">
-            <div id="site_title"><h1>Настройка параметров тренажера</h1></div>
+            <div id="site_title"><h1>Уровни сложности</h1></div>
         </div> <!-- end of templatemo header -->
 
+        <div style="height: 60px;"></div>
 
         <div>
 
-            <table style="top:35px;position: relative;" class="col">
-                <tr>
+            <table >
+                <tr style="">
                     <th>Номер</th>
                     <th>Минимальная длина</th>
                     <th>Максимальная длина</th>
                     <th>Максимальное количество ошибок</th>
-                    <th>Среднее время нажатия</th>
+                    <th>Максимальное время нажатия</th>
                     <th>Настройка</th>
                 </tr> <!--ряд с ячейками заголовков-->
                 <c:forEach items="${allDifficultyLevel}" var="difficultyLevel">
@@ -40,15 +41,16 @@
                         <td>${difficultyLevel.maxLength}</td>
                         <td>${difficultyLevel.maxNumberOfErrors}</td>
                         <td>${difficultyLevel.pressingTime}</td>
-                        <td><a style="margin: 0  0 0 0;border: none; height:auto; " id="buttonedit" class="butggton" href="editDifficultyLevel/${difficultyLevel.id}">Изменить</a>
+                        <td style="height: 60px;"><a  class="gradient-btn" href="editDifficultyLevel/${difficultyLevel.id}">Настроить</a>
                         </td>
                     </tr>
                     <!--ряд с ячейками заголовков-->
                 </c:forEach>
             </table>
         </div>
+        <div style="height: 30px;"></div>
 
-        <a style="right:10px; position: relative; top:40px;width: 150px;" id="buttonedit" class="butggton" href="/">Назад</a>
+        <div align="center"><a style="height:25px;" class="gradient-btn" href="/">Главная страница</a></div>
         <div class="cleaner"></div>
         <div class="cleaner"></div>
     </div> <!-- end of templatemo wrapper -->

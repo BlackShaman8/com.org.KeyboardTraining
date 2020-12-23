@@ -50,7 +50,7 @@
                     </span>
                     <div class="cleaner_h10"></div>
                     <a style="position: relative; padding:5px 3px; width: 100px; left: 200px; bottom: 140px"
-                       class="butggton" href="#" onclick="autoExercise()">Авто</a>
+                       class="butggton" href="#" onclick="autoExercise()">Создать автоматически</a>
                     <td>
 
                             <input type="file" name="fileName"/>

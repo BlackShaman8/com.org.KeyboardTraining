@@ -25,11 +25,11 @@
 
             <table style="position:relative;top:40px;  "class="col">
                 <tr>
-                    <th width="20%">Логин</th>
-                    <th width="20%">Роль</th>
-                    <th width="20%">Уровень</th>
-                    <th width="20%">Статистика</th>
-                    <th width="20%">Удаление</th>
+                    <th width=20%>Логин</th>
+                    <th width=20%>Роль</th>
+                    <th width=15%>Уровень</th>
+                    <th width=25%>Статистика</th>
+                    <th width=20%>Удаление</th>
                 </tr> <!--ряд с ячейками заголовков-->
                 <c:forEach items="${allUsers}" var="user">
                     <tr align="center" >
@@ -38,20 +38,20 @@
                             <c:forEach items="${user.roles}" var="role">${role.name}; </c:forEach>
                         <td>${user.level}</td>
                         </td>
-                        <td><a style="margin: 0  0 0 0;border: none; height:42px; " class="butggton" href="userStats/${user.id}">Посмотреть статистику</a></td>
-                        <td>
+                        <td><a style=" height:50px; " class="gradient-btn" href="userStats/${user.id}">Посмотреть статистику</a></td>
+                        <td >
                             <form action="${pageContext.request.contextPath}/accountManagement" method="post">
                                 <input type="hidden" name="userId" value="${user.id}"/>
                                 <input type="hidden" name="action" value="delete"/>
-                                <button style="margin: 0  0 0 0;height:50px; border: none "class="butggton" type="submit">Удалить</button>
+                                <button style="top:20px;left:90px;height:40px;"class="gradient-btn" type="submit">Удалить</button>
                             </form>
                         </td>
                     </tr>
                     <!--ряд с ячейками заголовков-->
                 </c:forEach>
             </table>
-            <div>
-                <a style="top:50px;width:150px; right:4px;" class="butggton" href="/">Назад</a></div>
+            <div align="center">
+                <a style="top:50px;width:150px; " class="gradient-btn" href="/">Главная страница</a></div>
         </div>
 
 
