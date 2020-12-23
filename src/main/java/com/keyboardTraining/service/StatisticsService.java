@@ -55,4 +55,12 @@ public class StatisticsService {
         }
         return count;
     }
+
+    public void deleteAllByExercide(Long ex){
+        List<Statistics> all= (List<Statistics>) statisticRepos.findAll();
+        for(int i=0; i<getAll().size();i++){
+            if(all.get(i).getExercise().getId()==ex)
+                statisticRepos.delete(all.get(i));
+        }
+    }
 }

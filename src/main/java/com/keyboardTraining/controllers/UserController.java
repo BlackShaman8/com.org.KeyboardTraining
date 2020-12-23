@@ -92,6 +92,16 @@ public class UserController {
         String name = auth.getName();//get logged in username
         User user = (User) userService.loadUserByUsername(name);
         model.put("user", user);
+        model.put("errorMessage","");
+        return "editProfile";
+    }
+    @GetMapping("/user/editProfile/error")
+    public String getEditProfileError(Map<String, Object> model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName();//get logged in username
+        User user = (User) userService.loadUserByUsername(name);
+        model.put("user", user);
+        model.put("errorMessage","Данный логин занят");
         return "editProfile";
     }
 
@@ -110,9 +120,9 @@ public class UserController {
         User user = (User) userService.loadUserByUsername(name);
         model.put("user", user);
         model.put("statistics", statisticsService.getAll());
-        model.put("statistica150", (double)statisticsService.getAllLess(50)/(double)statisticsService.getAll().size()*100);
-        model.put("statistica150400",  (double)statisticsService.getAllLess( 50,400)/(double)statisticsService.getAll().size()*100);
-        model.put("statistica400", (double)statisticsService.getAllMore(400)/(double)statisticsService.getAll().size()*100);
+        model.put("statistica150", (double) statisticsService.getAllLess(50) / (double) statisticsService.getAll().size() * 100);
+        model.put("statistica150400", (double) statisticsService.getAllLess(50, 400) / (double) statisticsService.getAll().size() * 100);
+        model.put("statistica400", (double) statisticsService.getAllMore(400) / (double) statisticsService.getAll().size() * 100);
         return "stats";
     }
 
@@ -126,11 +136,27 @@ public class UserController {
         return "userStats";
     }
 
+    @PostMapping("/user/editProfile/error")
+    public String postEditProfileError(@RequestParam String login, @RequestParam String password, @RequestParam String passwordConfirm, @RequestParam String id) {
+        if (password.equals(passwordConfirm)) {
+            User user = userService.findUserById(Long.parseLong(id));
+            if (!userService.loadUserByUsername(login).equals(null)) {
+                user.setLogin(login);
+                return "redirect:/user/editProfile/error";
+            }
+            userService.changeLogin(user);
+        }
+        return "editProfile";
+    }
+
     @PostMapping("/user/editProfile")
     public String postEditProfile(@RequestParam String login, @RequestParam String password, @RequestParam String passwordConfirm, @RequestParam String id) {
         if (password.equals(passwordConfirm)) {
             User user = userService.findUserById(Long.parseLong(id));
-            user.setLogin(login);
+            if (!userService.loadUserByUsername(login).equals(null)) {
+                user.setLogin(login);
+                return "redirect:/user/editProfile/error";
+            }
             userService.changeLogin(user);
         }
         return "editProfile";
@@ -170,7 +196,7 @@ public class UserController {
         statisticsService.saveStatistics(statistics);
         my_error_counter = numberOfMistakes;
         my_speed_counter = averageSpeed;
-        my_status=status;
+        my_status = status;
         return "redirect:result";
     }
 }

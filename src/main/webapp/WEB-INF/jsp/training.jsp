@@ -10,11 +10,12 @@
     <title>Тренировка</title>
     <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"> -->
     <link href="../../resources/css/templatemo_style.css" rel="stylesheet" type="text/css"/>
+    <link href="../../resources/css/index.css" rel="stylesheet" type="text/css"/>
 
 
-    <%--    <style>--%>
-    <%--        <%@include file="../../resources/css/bulma.min.css"%>--%>
-    <%--    </style>--%>
+<%--       <style>--%>
+<%--           <%@include file="../../resources/css/bulma.min.css"%>--%>
+<%--       </style>--%>
 
     <style type="text/css">
         h3, .label, ul li {
@@ -31,7 +32,7 @@
         }
     </style>
 </head>
-<body onload="init(), keyboard()">
+<body onload="init(), keyboard(),StartGame()">
 <script src="../../resources/js/virtualkeyboard.js"></script>
 <div id="templatemo_body_wrapper">
     <div id="templatemo_wrapper">
@@ -177,7 +178,7 @@
             <input name="exerciseinput" type="hidden" value="${exercise.id}"/>
             <input name="transitTime" type="hidden" id="transitTime"/>
             <input name="averageSpeed" type="hidden" id="input_speed_counter"/>
-            <input name="numberOfMistakes" type="hidden" id="input_error_counter"/>
+            <input name="numberOfMistakes" type="hidden" id="input_error_counter"  value="0"/>
             <input name="status" type="hidden" id="status" value="false"/>
             <input class="btnResult" type="submit" style="display:none"/>
         </form>
