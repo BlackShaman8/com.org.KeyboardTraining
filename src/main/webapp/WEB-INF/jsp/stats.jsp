@@ -54,6 +54,7 @@
             <table style="position: relative; bottom:30px;">
                 <tr>
                     <th>Дата</th>
+                    <th>Логин пользователя</th>
                     <th>Уровень</th>
                     <th>№ упражнения</th>
                     <th>Время прохождения</th>
@@ -64,12 +65,13 @@
                 <c:forEach items="${statistics}" var="statistics">
                     <tr>
                         <td>${statistics.date}</td>
+                        <td>${statistics.user.login}</td>
                         <td>${statistics.exercise.myDifficultyLevel.id}</td>
                         <td>${statistics.exercise.id}</td>
                         <td>${statistics.transitTime}</td>
                         <td>${statistics.averageSpeed}</td>
                         <td>${statistics.numberOfMistakes}</td>
-                        <td>${statistics.status}</td>
+                        <td>${statistics.status ? "Пройдено" : "Провалено"}</td>
                     </tr>
                 </c:forEach>
                 <!--ряд с ячейками тела таблицы-->
