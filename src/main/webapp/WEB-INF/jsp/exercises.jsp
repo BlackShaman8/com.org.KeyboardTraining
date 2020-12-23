@@ -20,15 +20,15 @@
             <div id="site_title"><h1>Упражнения</h1></div>
             <div style="height: 70px;"></div>
 
-            <div>
+            <div style="word-wrap: break-word">
 
-                <table >
+                <table style="table-layout: fixed">
                     <thead>
-                    <th width="5%">Номер</th>
-                    <th width="5%">Уровень сложности</th>
-                    <th width="70%">Текст упражнения</th>
-                    <th width="10%">Сохранить</th>
-                    <th width="10%">Удаление</th>
+                    <th width="6%">Номер</th>
+                    <th width="10%">Уровень сложности</th>
+                    <th>Текст упражнения</th>
+                    <th width="15%">Сохранение</th>
+                    <th width="15%">Удаление</th>
                     </thead>
                     <c:forEach items="${allExercise}" var="exercise">
                         <tr>
@@ -38,13 +38,17 @@
                             <td>
                                 <form action="${pageContext.request.contextPath}/exercises/save" method="post">
                                     <input type="hidden" name="exerciseId" value="${exercise.id}"/>
-                                    <button style="top:20px;left:90px;" type="submit" class="gradient-btn">Сохранить</button>
+                                    <button style="top:20px;left:70px;width: auto" type="submit" class="gradient-btn">
+                                        Сохранить
+                                    </button>
                                 </form>
                             </td>
                             <td style=" height:50px;">
                                 <form action="${pageContext.request.contextPath}/exercises" method="post">
                                     <input type="hidden" name="exerciseId" value="${exercise.id}"/>
-                                    <button style="top:20px;left:90px;" type="submit" class="gradient-btn">Удалить</button>
+                                    <button style="top:20px;left:70px;width: auto" type="submit" class="gradient-btn">
+                                        Удалить
+                                    </button>
                                 </form>
                             </td>
                         </tr>
@@ -56,6 +60,8 @@
                         Создать упражнение</a>
                     <a class="gradient-btn" href="/" style="left:5px;">Главная
                         страница</a>
+                    <a class="gradient-btn" href="#" style="left:10px;">
+                        Наверх </a>
                 </div>
             </div>
         </div>

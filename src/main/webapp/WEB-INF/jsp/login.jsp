@@ -13,7 +13,7 @@
 
 
 </head>
-<body style="background-image:url(../../resources/images/siren-klaviatura-myshka-tsvety(1).jpg)" !important>
+<body>
 <sec:authorize access="isAuthenticated()">
     <% response.sendRedirect("/"); %>
 </sec:authorize>
@@ -34,40 +34,46 @@
 
                 <div>
 
-                    <h4 id="enter1" class="enter" style="color:#550055"><b>Логин</b> &nbsp <input type="text"
+                    <h4 id="enter1" class="enter" style="color:#c68a4a"><b>Логин</b> &nbsp <input type="text"
                                                                                                   class="col"
                                                                                                   name="username"
                                                                                                   placeholder="Введите логин">
                     </h4>
-                    <h4 id="enter2" class="enter" style="color:#550055"><b>Пароль</b> <input type="password" class="col"
+                    <h4 id="enter2" class="enter" style="color:#c68a4a"><b>Пароль</b> <input type="password" class="col"
                                                                                              name="password"
                                                                                              placeholder="Введите пароль">
                     </h4>
+                    <div style="height:20px"></div>
 
-
-                    <c:if test="${param.regSucc == true}">
-                        <div id="status">
-                            <spring:message code="message.regSucc">
-                            </spring:message>
-                        </div>
-                    </c:if>
-                    <c:if test="${param.regError == true}">
-                        <div id="error">
-                            <spring:message code="message.regError">
-                            </spring:message>
-                        </div>
-                    </c:if>
-                    ${errorMessage}
-
-                    <a style="width:150px; right:47px; top:2px;" class="butggton" href="registration">Регистрация</a>
-                    <button type="submit" style="width:70px; bottom:50px; left:83px ; " class="butggton"
-                            onclick="validate()">Вход
-                    </button>
+                    <div align="center">
+                        <h4 style="font-weight:bold; color:#800080">
+                            <c:if test="${param.regSucc == true}">
+                                <div id="status">
+                                    <spring:message code="message.regSucc">
+                                    </spring:message>
+                                </div>
+                            </c:if>
+                            <c:if test="${param.regError == true}">
+                                <div id="error">
+                                    <spring:message code="message.regError">
+                                    </spring:message>
+                                </div>
+                            </c:if>
+                            ${errorMessage}
+                        </h4>
+                    </div>
+                    <div align="center">
+                        <a style="" class="gradient-btn" href="registration">Регистрация</a>
+                        <button type="submit" style="width:100px;left:55px;top:20px;" class="gradient-btn"
+                                onclick="validate()">Вход
+                        </button>
+                    </div>
                 </div>
 
             </div>
 
     </div>
+</div>
     </form>
 </div>
 </body>

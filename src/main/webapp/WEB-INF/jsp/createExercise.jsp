@@ -26,28 +26,27 @@
 
             </div> <!-- end of templatemo header -->
 
-            <h4 style="color:#660099;font-weight: bold;" id="editex" class="enter">Номер
+            <h4 style="color:#c68a4a;font-weight: bold;" id="editex" class="enter">Номер
                 упражнения:&nbsp&nbsp${number}</h4>
 
-            <div style="position: relative; ">
-
+            <div style="position: relative;width:50% ">
                 <p>
-                <h4 style="color:#660099;font-weight: bold;" id="editex" class="exerciseSelection enter">Уровень
+                <h4 style="color:#c68a4a;font-weight: bold;" id="editex" class="exerciseSelection enter">Уровень
                     сложности:
-                    <select style="color:#660099;font-weight: bold;" size="1" name="difficultyLevel"
+                    <select style="color:#c68a4a;font-weight: bold;" size="1" name="difficultyLevel"
                             id="difficultyLevel" required onchange="createExcercise()">
-                        <option style="color:#660099;font-weight: bold;" value="1">1</option>
-                        <option style="color:#660099;font-weight: bold;" value="2">2</option>
-                        <option style="color:#660099;font-weight: bold;" value="3">3</option>
-                        <option style="color:#660099;font-weight: bold;" value="4">4</option>
+                        <option style="color:#c68a4a;font-weight: bold;" value="1">1</option>
+                        <option style="color:#c68a4a;font-weight: bold;" value="2">2</option>
+                        <option style="color:#c68a4a;font-weight: bold;" value="3">3</option>
+                        <option style="color:#c68a4a;font-weight: bold;" value="4">4</option>
                     </select></h4>
                 </p>
-                <div style="color:#660099;font-weight: bold;" class="cleaner_h10">Допустимые символы:
+                <div style="color:#800080;font-weight: bold;" class="cleaner_h10">Допустимые символы:
                     к,е,н,г,а,п,р,о,м,и,т,ь
                 </div>
 
-                <label style="right:50px;  font-size: 18px; color:#660099;font-weight: bold;" for="text">Текст
-                    упражнения:</label>
+                <h4 style="right:50px;  font-size: 18px; color:#c68a4a;font-weight: bold;" for="text">Текст
+                    упражнения:</h4>
                 <span class="createDifficultyLevel"><textarea id="text" name="exercise" rows="10" cols="50"
                                                               class="required" type="text"
                                                               minlength="${difficulteLevel0.minLength}"
@@ -56,25 +55,25 @@
                     <input type="hidden" name="minLength" value="${difficulteLevel0.minLength}"/>
                     <input type="hidden" name="maxLength" value="${difficulteLevel0.maxLength}"/>
                     </span>
-                <div class="cleaner_h10"></div>
-                <a style="position: relative; padding:5px 3px; width: 100px; left: 200px; bottom: 140px"
-                   class="butggton" href="#" onclick="autoExercise()">Авто</a>
+                <div style="height: 50px;"></div>
+
+                <a style="" class="gradient-btn" href="#" onclick="autoExercise()">Авто</a>
                 <td>
 
-                    <input type="file" name="fileName"/>
-                    <button name="buttonCreate" style="margin: 0  0 0 0;border: none;height: auto" type="submit"
-                            class="butggton" value="load">Загрузить
+                    <input class="gradient-btn" style="" type="file" name="fileName"/>
+                    <button name="buttonCreate" style="" type="submit"
+                            class="gradient-btn" value="load">Загрузить
                     </button>
 
                 </td>
                 ${errorMessage}
                 <input type="hidden" name="action" value="create"/>
                 <button name="buttonCreate" type="submit"
-                        style="position: relative; padding:5px 3px;width: 110px;left: 200px; bottom: 199px"
-                        class="butggton" value="create">Создать
+                        style=""
+                        class="gradient-btn" value="create">Создать
                 </button>
-                <a style="position: relative; padding:5px 3px; left: 350px; bottom: 251px; width: 100px; "
-                   class="butggton" href="/exercises">Назад</a>
+                <a style=""
+                   class="gradient-btn" href="/exercises">Назад</a>
 
 
             </div>

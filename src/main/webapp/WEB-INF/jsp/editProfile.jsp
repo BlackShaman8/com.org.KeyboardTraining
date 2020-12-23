@@ -11,7 +11,7 @@
     <link href="../../resources/css/templatemo_style.css" rel="stylesheet" type="text/css"/>
 
 </head>
-<body background="../../resources/images/siren-tsvety-myshka-klaviatura-ruchka.jpg">
+<body >
 <div id="templatemo_body_wrapper">
     <div id="templatemo_wrapper">
 
