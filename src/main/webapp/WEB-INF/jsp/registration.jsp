@@ -10,7 +10,7 @@
     <meta name="description" content=""/>
     <link href="../../resources/css/templatemo_style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body background="../../resources/images/siren-klaviatura-myshka-tsvety (1).jpg">
+<body>
 
 <div id="templatemo_body_wrapper">
     <form:form method="POST" modelAttribute="userForm">
