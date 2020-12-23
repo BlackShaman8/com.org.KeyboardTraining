@@ -16,13 +16,13 @@
     <form:form method="POST" modelAttribute="userForm">
         <div id="templatemo_wrapper">
             <div id="templatemo_header">
-                <div id="site_title"><h1 style="color:#FF3399"><b>Создание учетной записи</b></h1></div>
+                <div id="site_title" ><h1 style=""><b>Создание учетной записи</b></h1></div>
             </div>
             <div>
-                <h4 class="edit" style="color:#550055;left:291px;"></h4>
-                <h4 class="edit" style="color:#550055;left:291px;"><b>Логин:&nbsp&nbsp&nbsp&nbsp</b>
+                <h4  class="edit" style="color:#c68a4a;left:291px;"></h4>
+                <h4  class="edit" style="color:#c68a4a;left:291px;"><b>Логин:&nbsp&nbsp&nbsp&nbsp</b>
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <form:input style="width:170px" type="text" path="login" class="col" name="login" align="middle"
+                    <form:input style="width:160px" type="text" path="login" class="col" name="login" align="middle"
                                 placeholder="Логин пользователя" minLength="2" maxlength="8"></form:input></h4>
                 <form:errors style="color:#550055;left:291px;" path="login"></form:errors>
                 <h4 style="color:#550055;left:291px;"> ${usernameError}</h4>
