@@ -65,6 +65,7 @@ public class UserController {
         model.put("user", user);
         Exercise exercise = exerciseService.getExercise(Long.parseLong(exer));
         model.put("exercise", exercise);
+        model.put("exerciseLength",exercise.getExercise().length());
         return "training";
     }
 
@@ -197,6 +198,11 @@ public class UserController {
         my_error_counter = numberOfMistakes;
         my_speed_counter = averageSpeed;
         my_status = status;
+        if(status=="true"){
+            int level=user.getLevel();
+            user.setLevel(level+1);
+            userService.saveUser(user);
+        }
         return "redirect:result";
     }
 }

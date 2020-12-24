@@ -8,7 +8,5 @@ import java.util.List;
 
 public interface StatisticRepos extends CrudRepository<Statistics,Long> {
     public List<Statistics> getAllByUserId(Long userId);
-    public List<Statistics> getAllByAverageSpeedLessThan(double less);
-    public List<Statistics> findAllByAverageSpeedBetween(double less,double more);
     public void deleteAllByExercise_Id(Long exerciseId);
 }

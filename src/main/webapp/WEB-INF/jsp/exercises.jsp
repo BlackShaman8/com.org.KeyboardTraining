@@ -28,6 +28,7 @@
                     <th width="10%">Уровень сложности</th>
                     <th>Текст упражнения</th>
                     <th width="15%">Сохранение</th>
+                    <th width="15%">Изменение</th>
                     <th width="15%">Удаление</th>
                     </thead>
                     <c:forEach items="${allExercise}" var="exercise">
@@ -41,6 +42,14 @@
                                     <button style="top:20px;left:70px;width: auto" type="submit" class="gradient-btn">
                                         Сохранить
                                     </button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="${pageContext.request.contextPath}/exercises/change" method="post">
+                                    <input type="hidden" name="exerciseId" value="${exercise.id}"/>
+                                    <a style="left:15px;width: auto" href="/exercises/changeExercise/${exercise.id}" class="gradient-btn">
+                                        Изменить
+                                    </a>
                                 </form>
                             </td>
                             <td style=" height:50px;">

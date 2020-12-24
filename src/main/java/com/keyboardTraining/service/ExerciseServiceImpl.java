@@ -14,46 +14,39 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ExerciseServiceImpl implements ExerciseService {
+public class ExerciseServiceImpl {
     private final ExerciseRepos exerciseRepos;
 
     public ExerciseServiceImpl(ExerciseRepos exerciseRepos) {
         this.exerciseRepos = exerciseRepos;
     }
 
-    @Override
     public boolean saveExercise(Exercise exercise) {
         exerciseRepos.save(exercise);
         return true;
     }
 
-    @Override
     public void deleteExercise(Exercise exercise) {
-
+        exerciseRepos.delete(exercise);
     }
 
-    @Override
-    public Exercise changeExercise(Exercise exercise) {
-        return null;
+    public void changeExercise(Exercise exercise) {
+        exerciseRepos.save(exercise);
     }
 
-    @Override
     public List<Exercise> getAll() {
         return (List<Exercise>) exerciseRepos.findAll();
     }
 
-    @Override
     public Exercise getExercise(Long id) {
         Optional<Exercise> exercise=exerciseRepos.findById(id);
         return exercise.orElse(new Exercise());
     }
 
-    @Override
     public void deleteExerciseId(Long id) {
         exerciseRepos.deleteById(id);
     }
 
-    @Override
     public int count() {
         return getAll().size();
     }

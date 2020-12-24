@@ -89,6 +89,19 @@ public class ExerciseController {
         }
     }
 
+    @GetMapping("exercises/changeExercise/{exerciseId}")
+    public String getExerciseChangeView(@PathVariable String exerciseId,Model model) {
+        model.addAttribute("exercise", exerciseService.getExercise(Long.parseLong(exerciseId)));
+        List<DifficultyLevel> list = difficultyLevelService.getAll();
+        for (int i = 0; i < list.size(); i++)
+            model.addAttribute("difficulteLevel" + i, list.get(i));
+        if (exerciseService.getAll().size() != 0) {
+            model.addAttribute("number", exerciseService.getAll().get(exerciseService.getAll().size() - 1).getId() + 1);
+        } else
+            model.addAttribute("number", "0");
+        return "changeExercise";
+    }
+
     @PostMapping("/exercises/save")
     public String postExerciseSave(@RequestParam String exerciseId) {
         String file = "exercises" + exerciseId + ".XML";
@@ -98,10 +111,25 @@ public class ExerciseController {
     }
 
 
+    @PostMapping("/exercises/changeExercise/{exerciseId}")
+    public String postExerciseChange(@PathVariable String exerciseId,@RequestParam String difficultyLevel, @RequestParam String exercise, @RequestParam String buttonCreate, @RequestParam String fileName) {
+        if(exercise.equals("")){
+            return "redirect:/createExercise/error";
+        }
+        Exercise ex = exerciseService.getExercise(Long.parseLong(exerciseId));
+        ex.setMyDifficultyLevel(difficultyLevelService.getDifficultyLevel(Long.parseLong(difficultyLevel)));
+        ex.setExercise(exercise);
+        exerciseService.changeExercise(ex);
+        return "redirect:/createExercise";
+    }
+
+
     @PostMapping("/exercises")
     public String postExercise(@RequestParam String exerciseId) {
         statisticsService.deleteAllByExercide(Long.parseLong(exerciseId));
         List<Statistics> stat=statisticsService.getAll();
+        List<Exercise> exer=exerciseService.getAll();
+
         exerciseService.deleteExerciseId(Long.parseLong(exerciseId));
         return "redirect:/exercises";
     }

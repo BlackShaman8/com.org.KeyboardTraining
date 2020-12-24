@@ -14,7 +14,7 @@
 
 
 </head>
-<body>
+<body style="  background-attachment: fixed;">
 <div id="templatemo_body_wrapper">
     <div id="templatemo_wrapper">
 
@@ -28,11 +28,12 @@
         <a style="left:20px;" href="/stats" class="gradient-btn">Общая статистика</a>
         <sec:authorize access="hasRole('USER')">
             <div>
-                <h4 style="bottom:40px;color: #c68a4a; font-weight: bold;right:50px; " align="right" class="enter">Логин
+                <h4 style="bottom:40px;color: #c68a4a; font-weight: bold;right:100px; " align="right" class="enter">Логин
                     пользователя: ${pageContext.request.userPrincipal.name}</h4>
             </div>
         </sec:authorize>
         <sec:authorize access="hasRole('ADMIN')">
+            <a style="left:30px;" href="/accountManagement" class="gradient-btn">Учетные записи</a>
             <div>
                 <h4 style="bottom:50px;color: #550055; font-weight: bold" align="right" class="enter">Логин
                     пользователя: ${user.login}</h4>
@@ -59,7 +60,7 @@
                         <td>${statistics.transitTime}</td>
                         <td>${statistics.averageSpeed}</td>
                         <td>${statistics.numberOfMistakes}</td>
-                        <td>${statistics.status}</td>
+                        <td>${statistics.status ? "Пройдено" : "Провалено"}</td>
                     </tr>
                 </c:forEach>
 

@@ -33,19 +33,19 @@
         </div> <!-- end of templatemo header -->
 
         <form>
-            <fieldset style=" border:2px solid #FF3399; width: 10px;margin-left: auto;
+            <fieldset style=" border:3px solid #ace0be; width: 10px;margin-left: auto;
     margin-right: auto ">
                 <div>
-                    <h4 id="result" style="color: #550055; font-weight: bold;" class="userpage1" align="middle" value="${status}}">
+                    <h4 id="result" style="color: #c68a4a; font-weight: bold;" class="userpage1" align="middle" value="${status}}">
                         ${status}</h4>
-                    <h4 style="color: #550055; font-weight: bold;" class="userpage1" align="middle">Знаков в
+                    <h4 style="color: #c68a4a; font-weight: bold;" class="userpage1" align="middle">Знаков в
                         минуту: ${speed_counter}</h4>
-                    <h4 style="color: #550055; font-weight: bold;" class="userpage2" align="middle">
+                    <h4 style="color: #c68a4a; font-weight: bold;" class="userpage2" align="middle">
                         Ошибок: ${error_counter}</h4>
 
                 </div>
-                <a class="butggton" style="width:100px" href="/user/training">Повторить</a>
-                <a class="butggton" style="width:100px" href="/user/trainingParameters">Далее</a>
+                <a class="gradient-btn" style="width:100px" href="/user/training">Повторить</a>
+                <a class="gradient-btn" style="width:100px;left:10px" href="/user/trainingParameters">Далее</a>
             </fieldset>
         </form>
 

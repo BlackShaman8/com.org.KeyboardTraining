@@ -6,7 +6,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Статистика пользователя</title>
+    <title>Общая статистика</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
 
@@ -27,21 +27,21 @@
         </div> <!-- end of templatemo header -->
         <sec:authorize access="hasRole('USER')">
             <DIV>
-                <a style="top:20px;" class="gradient-btn" href="/user/trainingParameters">Тренировка</a>
-                <a style="top:20px;left:20px" class="gradient-btn" href="/user/userStats">Моя статистика</a>
+                <a style="top:40px;" class="gradient-btn" href="/user/trainingParameters">Тренировка</a>
+                <a style="top:40px;left:20px" class="gradient-btn" href="/user/userStats">Моя статистика</a>
             </div>
             <!-- end of templatemo_menu -->
         </sec:authorize>
         <sec:authorize access="hasRole('ADMIN')">
-            <DIV style="height: 50px;">
-            </div>
+            <a style="top:40px;left: 50px;" class="gradient-btn" href="/">Главная страница</a>
             <!-- end of templatemo_menu -->
         </sec:authorize>
         <div style="height: 50px;"></div>
-        <div align="center">
-            <h4  style="bottom:45px;font-weight: bold;color: #883a82;width:400px;" class="enter">
+        <div align="right">
+            <h4  style="bottom:55px;right:100px;font-weight: bold;color: #c68a4a;width:400px;" class="enter">
                 Логин пользователя: ${pageContext.request.userPrincipal.name}</h4>
         </div>
+        <div style="height: 20px;"></div>
 
         <div>
             <table style="position: relative; bottom:30px;">
@@ -62,7 +62,7 @@
                         <td>${statistics.transitTime}</td>
                         <td>${statistics.averageSpeed}</td>
                         <td>${statistics.numberOfMistakes}</td>
-                        <td>${statistics.status}</td>
+                        <td>${statistics.status ? "Пройдено" : "Провалено"}</td>
                     </tr>
                 </c:forEach>
                 <!--ряд с ячейками тела таблицы-->
@@ -79,8 +79,7 @@
                 <circle style="fill:none;  stroke-width: 10;  stroke: #008080;   stroke-dasharray: ${statistica150400} 100;stroke-dashoffset: -${statistica150};"
                         id="unit" r="15.9" cx="50%" cy="50%"/>
                 <circle style="fill:none;  stroke-width: 10;   stroke: #c68a4a;  stroke-dasharray: ${statistica400} 100; stroke-dashoffset: -${statistica150}-${statistica150400}; id="
-                        unit
-                " r="15.9" cx="50%" cy="50%"/>
+                        unit" r="15.9" cx="50%" cy="50%"/>
             </svg>
             <div style="position:relative;right:480px;top:30px; ">
                 <ul class="caption-list">

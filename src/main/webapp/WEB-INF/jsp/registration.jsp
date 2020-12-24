@@ -22,15 +22,14 @@
                 <h4  class="edit" style="color:#c68a4a;left:291px;"></h4>
                 <h4  class="edit" style="color:#c68a4a;left:291px;"><b>Логин:&nbsp&nbsp&nbsp&nbsp</b>
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                    <form:input style="width:160px" type="text" path="login" class="col" name="login" align="middle"
+                    <form:input style="width:169px" type="text" path="login" class="col" name="login" align="middle"
                                 placeholder="Логин пользователя" minLength="2" maxlength="8"></form:input></h4>
-                <form:errors style="color:#550055;left:291px;" path="login"></form:errors>
-                <h4 style="color:#550055;left:291px;"> ${usernameError}</h4>
-                <h4 class="edit" style="color:#550055;left:291px;"><b>Пароль:&nbsp&nbsp </b>
+
+                <h4 class="edit" style="color:#c68a4a;left:291px;"><b>Пароль:&nbsp&nbsp </b>
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <form:input type="password" path="password" class="col" name="password" align="middle"
                                 placeholder="Пароль" minLength="4" maxlength="12"></form:input></h4>
-                <h4 id="edit3" class="edit" style="color:#550055"><b>Повторите пароль: </b> <form:input type="password"
+                <h4 id="edit3" class="edit" style="color:#c68a4a"><b>Повторите пароль: </b> <form:input type="password"
                                                                                                         path="passwordConfirm"
                                                                                                         class="col"
                                                                                                         name="passwordConfirm"
@@ -39,10 +38,17 @@
                                                                                                         minLength="4"
                                                                                                         maxlength="12"></form:input>
                 </h4>
-                <form:errors style="text-align:center;" path="password"></form:errors>
-                    ${passwordError}
-                <div><a style="width:150px; right:90px; ;" class="butggton" href="login">Авторизация</a>
-                    <button id="reg" type="submit" style="width:150px;left:90px;bottom:51px;" class="butggton"
+
+                <div style="height:10px"></div>
+
+                <form:errors style="text-align:center;color:#800080;left:291px;" path="login"></form:errors>
+                <h4 align="center" style="font-weight: bold; color:#800080;left:291px;"> ${usernameError}</h4>
+                <form:errors style="text-align:center;color:#800080;left:291px;" path="password"></form:errors>
+                <h4 align="center" style="font-weight: bold; color:#800080;left:291px;"> ${passwordError}</h4>
+                <div style="height:10px"></div>
+
+                <div align="center"><a style="" class="gradient-btn" href="login">Авторизация</a>
+                    <button id="reg" type="submit" style="left:110px;top:20px" class="gradient-btn"
                             onclick="validate()">Регистрация
                     </button>
                 </div>

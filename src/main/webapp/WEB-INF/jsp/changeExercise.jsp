@@ -15,8 +15,8 @@
     <link href="../../resources/css/templatemo_style.css" rel="stylesheet" type="text/css"/>
 
 </head>
-<body>
-<form action="${pageContext.request.contextPath}/createExercise" method="post">
+<body onload="initChangeExercise()">
+<form action="${pageContext.request.contextPath}/exercises/changeExercise/${exercise.id}" method="post">
     <div id="templatemo_body_wrapper">
         <div id="templatemo_wrapper">
 
@@ -29,9 +29,10 @@
             <div style="height: 40px"></div>
 
             <h4 style="color:#c68a4a;font-weight: bold;" id="editex" class="enter">Номер
-                упражнения:&nbsp&nbsp${number}</h4>
+                упражнения:&nbsp&nbsp${exercise.id}</h4>
 
             <div style="position: relative;width:50% ">
+                <input id="myDifficultyLevel" type="hidden" value="${exercise.myDifficultyLevel.id}"/>
                 <p>
                 <h4 style="color:#c68a4a;font-weight: bold;" id="editex" class="exerciseSelection enter">Уровень
                     сложности:
@@ -53,7 +54,7 @@
                                                               class="required" type="text"
                                                               minlength="${difficulteLevel0.minLength}"
                                                               maxlength="${difficulteLevel0.maxLength}"
-                                                              onkeydown="return restrictionOfEnteredCharacters(this,event)"></textarea>
+                                                              onkeydown="return restrictionOfEnteredCharacters(this,event)">${exercise.exercise}</textarea>
                     <input type="hidden" name="minLength" value="${difficulteLevel0.minLength}"/>
                     <input type="hidden" name="maxLength" value="${difficulteLevel0.maxLength}"/>
                     </span>

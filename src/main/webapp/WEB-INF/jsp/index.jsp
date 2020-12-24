@@ -18,7 +18,7 @@
         <div id="templatemo_wrapper">
 
             <div id="templatemo_header">
-                <div id="site_title"><h1>Страница пользователя</h1></div>
+                <div id="site_title"><h1>Клавиатурный тренажер</h1></div>
             </div>
             <div style="height: 30px"></div>
             <div align="center">

@@ -23,35 +23,40 @@
 
             <div id="site_title"><h1>Параметры тренировки</h1></div>
 
-
         </div>
+        <div style="height: 60px"></div>
 
 
         <div>
             <form method="POST">
-            <h4 id="trpar" style="color: #550055; font-weight: bold;" class="enter">Логин пользователя: ${pageContext.request.userPrincipal.name}</h4>
-            <h4 id="trpar" style="color: #550055; font-weight: bold;" class="enter">Уровень:&nbsp&nbsp&nbsp&nbsp
-                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp${user.level}</h4>
-            <h4 id="list1" style="color: #550055; font-weight: bold;" class="enter">Выберите уровень сложности:
-                <select style="color: #550055; font-weight: bold;" id="difficultyLevel" onchange="changeSelect()">
-                    <c:forEach items="${allDifficultyLevel}" var="difficultyLevel">
-                        <option> ${difficultyLevel.id}</option>
-                    </c:forEach>
-                </select></h4>
-            <h4 style="color: #550055; font-weight: bold;" id="list1" class="enter">Выберите упражнение:
-                <h4 class="exerciseSelection">
-                    <select style="color: #550055; font-weight: bold;" id="sel idLevel" name ="section" <%--onchange="createTraining()"--%>>
-                        <c:forEach items="${exercisesLevel1}" var="exercise">
-                            <option style="color: #550055; font-weight: bold;" value=" ${exercise.id}">
-                                    ${exercise.exercise}
-                            </option>
+                <h4 style="color: #c68a4a; font-weight: bold;" class="enter" align="center">Логин
+                    пользователя:${pageContext.request.userPrincipal.name} &nbsp&nbsp&nbsp&nbsp Уровень: ${user.level}</h4>
+                <div style="height: 20px"></div>
+                <h4 id="list1" style="top:5px;color: #c68a4a; font-weight: bold; class="enter">Выберите уровень сложности:
+                    <select style="color: #c68a4a; font-weight: bold;" id="difficultyLevel" onchange="changeSelect()">
+                        <c:forEach items="${allDifficultyLevel}" var="difficultyLevel">
+                            <option> ${difficultyLevel.id}</option>
                         </c:forEach>
                     </select></h4>
-            </h4>
+                <div style="">
+                    <h4  style="color: #c68a4a;top:0px; font-weight: bold;">Выберите упражнение:
+                        <h4 class="exerciseSelection" style="">
+                            <select style="color: #800080;max-width:250px; font-weight: bold;" id="sel idLevel"
+                                    name="section" <%--onchange="createTraining()"--%>>
+                                <c:forEach items="${exercisesLevel1}" var="exercise">
+                                    <option style="color: #800080; font-weight: bold;" value=" ${exercise.id}">
+                                            ${exercise.exercise}
+                                    </option>
+                                </c:forEach>
+                            </select></h4>
+                    </h4>
+                </div>
+                <div style="height: 40px"></div>
 
-            <div><button type="submit"  class="butggton">Начать тренировку</button></div>
-            <div><a  class="butggton" href="/">Назад</a></div>
-
+                <div align="center">
+                    <button type="submit" class="gradient-btn" style="width: 200px;left:80px">Начать тренировку</button>
+                    <a  style="bottom: 20px;right: 10px" class="gradient-btn" href="/">Главная страница</a>
+                </div>
             </form>
         </div>
         <div class="cleaner"></div>

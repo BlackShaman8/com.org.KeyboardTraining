@@ -23,27 +23,29 @@
 
         <div>
 
-            <table style="position:relative;top:40px;  "class="col">
+            <table align="center" style="position:relative;top:40px;width:70%  " class="col">
                 <tr>
-                    <th width=20%>Логин</th>
-                    <th width=20%>Роль</th>
-                    <th width=15%>Уровень</th>
-                    <th width=25%>Статистика</th>
+                    <th width=15%>Логин</th>
+                    <th width=10%>Уровень</th>
+                    <th width=30%>Статистика</th>
                     <th width=20%>Удаление</th>
                 </tr> <!--ряд с ячейками заголовков-->
                 <c:forEach items="${allUsers}" var="user">
-                    <tr align="center" >
+                    <tr align="center">
                         <td>${user.username}</td>
                         <td>
-                            <c:forEach items="${user.roles}" var="role">${role.name}; </c:forEach>
-                        <td>${user.level}</td>
+
+                        ${user.level}
                         </td>
-                        <td><a style=" height:50px; " class="gradient-btn" href="userStats/${user.id}">Посмотреть статистику</a></td>
-                        <td >
+                        <td><a style=" height:50px; " class="gradient-btn" href="userStats/${user.id}">Посмотреть
+                            статистику</a></td>
+                        <td>
                             <form action="${pageContext.request.contextPath}/accountManagement" method="post">
                                 <input type="hidden" name="userId" value="${user.id}"/>
                                 <input type="hidden" name="action" value="delete"/>
-                                <button style="top:20px;left:90px;height:40px;"class="gradient-btn" type="submit">Удалить</button>
+                                <button style="top:20px;left:90px;height:40px;" class="gradient-btn" type="submit">
+                                    Удалить
+                                </button>
                             </form>
                         </td>
                     </tr>
@@ -55,12 +57,11 @@
         </div>
 
 
-
         <div class="cleaner"></div>
         <div class="cleaner"></div>
     </div> <!-- end of templatemo wrapper -->
 </div> <!-- end of templatemo body wrapper -->
 
-
+<div style="height: 40px"></div>
 </body>
 </html>

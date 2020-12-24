@@ -23,10 +23,10 @@
             <div style="height: 60px;"></div>
 
             <div>
-                <table class="col" align="center" style="width:50%">
-                    <tr align="center">
-                        <td>Уровень сложности упражнения</td>
-                        <td class="col">1</td>
+                <table class="col" align="center" style="width:45%;font-weight: bold">
+                    <tr align="center" style="height: 40px;">
+                        <td >Уровень сложности упражнения</td>
+                        <td >1</td>
                     </tr> <!--ряд с ячейками заголовков-->
                     <tr align="center">
                         <td id="td1">Минимальная длина</td>

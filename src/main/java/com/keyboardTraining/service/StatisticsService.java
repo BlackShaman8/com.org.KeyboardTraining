@@ -56,11 +56,15 @@ public class StatisticsService {
         return count;
     }
 
-    public void deleteAllByExercide(Long ex){
-        List<Statistics> all= (List<Statistics>) statisticRepos.findAll();
-        for(int i=0; i<getAll().size();i++){
-            if(all.get(i).getExercise().getId()==ex)
+    public void deleteAllByExercide(Long ex) {
+        List<Statistics> all = (List<Statistics>) statisticRepos.findAll();
+        for (int i = 0; i < getAll().size(); i++) {
+            Long l=all.get(i).getExercise().getId();
+            if (l.equals(ex)) {
                 statisticRepos.delete(all.get(i));
+                List<Statistics> newAll = (List<Statistics>) statisticRepos.findAll();
+                int a=1;
+            }
         }
     }
 }
