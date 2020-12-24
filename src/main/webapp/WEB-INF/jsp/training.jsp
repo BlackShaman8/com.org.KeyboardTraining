@@ -56,7 +56,7 @@
                        value="${exercise.myDifficultyLevel.pressingTime}"/>
                 <div class="hero-head container" align="center">
                     <div>
-                        <div>><h3 style="text-align:center; color: #c68a4a; font-weight: bold;" class="lab"><span
+                        <div><h3 style="text-align:center; color: #c68a4a; font-weight: bold;" class="lab"><span
                                 name="error_counter" id="error_counter">0</span>/${exercise.myDifficultyLevel.maxNumberOfErrors} Ошибок </h3>
                         </div>
                         <div>

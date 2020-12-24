@@ -53,6 +53,10 @@ public class UserService implements UserDetailsService {
         return users;
     }
 
+    public void changeUser(User user) {
+        userRepos.save(user);
+    }
+
     public boolean saveUser(User user) {
         User userFromDB = userRepos.findUserByLogin(user.getUsername());
 

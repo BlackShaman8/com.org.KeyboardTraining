@@ -198,10 +198,10 @@ public class UserController {
         my_error_counter = numberOfMistakes;
         my_speed_counter = averageSpeed;
         my_status = status;
-        if(status=="true"){
-            int level=user.getLevel();
-            user.setLevel(level+1);
-            userService.saveUser(user);
+        if(status.equals("true")){
+            User userLevel=userService.findUserById(user.getId());
+            userLevel.setLevel(userLevel.getLevel()+1);
+            userService.changeUser(userLevel);
         }
         return "redirect:result";
     }
