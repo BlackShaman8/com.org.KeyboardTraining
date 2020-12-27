@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Exercise>
+    <myDifficultyLevel id="1">
+        <maxLength>101</maxLength>
+        <minLength>21</minLength>
+        <maxNumberOfErrors>9</maxNumberOfErrors>
+        <pressingTime>3.0</pressingTime>
+    </myDifficultyLevel>
+    <exercise>тпаркинкаг  имипнигмкрекмкргмапннпнмткрн</exercise>
+</Exercise>
