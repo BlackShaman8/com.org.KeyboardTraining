@@ -57,7 +57,7 @@
 
                 <div align="center">
                     <button type="submit" class="gradient-btn" href="createExercise"
-                            style="width:130px;top:40px;left:30px">Сохранить
+                            style="width:130px;top:40px;left:50px">Сохранить
                     </button>
                     <a class="gradient-btn" href="/difficultyLevels" style="top:20px">Назад</a>
                 </div>

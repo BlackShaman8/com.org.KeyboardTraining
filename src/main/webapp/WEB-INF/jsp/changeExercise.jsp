@@ -8,7 +8,7 @@
         <%@include file="../../resources/js/code.js"%>
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Создание упражнения</title>
+    <title>Изменение упражнения</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
 
@@ -22,11 +22,11 @@
 
             <div id="templatemo_header">
 
-                <div id="site_title"><h1>Создание упражнения</h1></div>
+                <div id="site_title"><h1>Изменение упражнения</h1></div>
 
             </div> <!-- end of templatemo header -->
 
-            <div style="height: 40px"></div>
+            <div style="height: 15px"></div>
 
             <h4 style="color:#c68a4a;font-weight: bold;" id="editex" class="enter">Номер
                 упражнения:&nbsp&nbsp${exercise.id}</h4>
@@ -64,15 +64,16 @@
         </div>
         <div align="center">
             <input type="hidden" name="action" value="create"/>
-            <button name="buttonCreate" type="submit" style="bottom:150px;left:380px;width:180px;" class="gradient-btn"
-                    value="create">Создать</button>
-            <a style="bottom:170px;left:300px;" class="gradient-btn" href="#" onclick="autoExercise()">Сгенерировать</a>
+            <button name="buttonCreate" type="submit" style="bottom:150px;left:250px;width:180px;" class="gradient-btn"
+                    value="create">Изменить</button>
+            <a style="bottom:110px;right:25px;" class="gradient-btn" href="#" onclick="autoExercise()">&nbsp
+                &nbsp Сгенерировать&nbsp&nbsp</a>
             <input style="bottom:80px;left:150px;height:20px;width:100px;" class="gradient-btn" style="" type="file"
                    name="fileName" onchange="showExercise(this)"/>
         </div>
         <div align="center">
             <a style="width:180px !important;" class="gradient-btn" href="/exercises">Назад</a>
-            <a style="" class="gradient-btn" href="/">Главная страница</a>
+            <a style="left:10px;" class="gradient-btn" href="/">Главная страница</a>
         </div>
         <h4 align="center">${errorMessage}</h4>
     </div>

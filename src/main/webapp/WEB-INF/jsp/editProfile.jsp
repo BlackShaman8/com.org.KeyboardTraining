@@ -31,7 +31,7 @@
                 <h4 style="color: #c68a4a;left:300px; position: relative;top:30px; font-weight: bold;">Пароль:
                     &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                     <input type="password" class="col" name="password" align="middle" placeholder="Пароль" minLength="4" maxlength="12"></h4>
-                <h4 style="color: #c68a4a;left:300px; position: relative;top:30px; font-weight: bold;">Повторите пароль:&nbsp<input style="width:172px" type="password" class="col" name="passwordConfirm" align="middle"
+                <h4 style="color: #c68a4a;left:300px; position: relative;top:30px; font-weight: bold;">Повторите пароль:&nbsp<input style="width:165px" type="password" class="col" name="passwordConfirm" align="middle"
                                                                      placeholder="Пароль" minLength="4" maxlength="12"></h4>
                 <input type="hidden" name="id" value="${user.id}">
                 <div style="height: 70px;"></div>

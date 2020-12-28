@@ -63,19 +63,19 @@
         </div>
         <div align="center">
             <input type="hidden" name="action" value="create"/>
-            <button name="buttonCreate" type="submit" style="bottom:150px;left:380px;width:180px;" class="gradient-btn"
+            <button name="buttonCreate" type="submit" style="bottom:150px;left:305px;width:160px;" class="gradient-btn"
                     value="create">Создать</button>
-            <a style="bottom:170px;left:300px;" class="gradient-btn" href="#" onclick="autoExercise()">Сгенерировать</a>
-            <input style="bottom:80px;left:150px;height:20px;width:100px;" class="gradient-btn" style="" type="file"
-                   name="fileName" onchange="showExercise(this)"/>
+            <a style="bottom:110px;left:60px;" class="gradient-btn" href="#" onclick="autoExercise()">&nbspСгенерировать&nbsp</a>
+            <label style="right:109px;bottom:45px;font-size: 12px;height:16px;line-height: 16px !important; width:125px;" class="gradient-btn">
+            <input type="file"  name="fileName" onchange="showExercise(this)"/> &nbsp&nbsp&nbsp&nbsp&nbspЗагрузить&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+            </label>
         </div>
         <div align="center">
             <a style="width:180px !important;" class="gradient-btn" href="/exercises">Назад</a>
-            <a style="" class="gradient-btn" href="/">Главная страница</a>
+            <a  class="gradient-btn" href="/" style="left:10px;">Главная страница</a>
         </div>
         <h4 align="center">${errorMessage}</h4>
     </div>
-
 </form>
 </body>
 </html>

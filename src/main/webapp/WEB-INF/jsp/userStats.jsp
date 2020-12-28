@@ -35,7 +35,7 @@
         <sec:authorize access="hasRole('ADMIN')">
             <a style="left:30px;" href="/accountManagement" class="gradient-btn">Учетные записи</a>
             <div>
-                <h4 style="bottom:50px;color: #550055; font-weight: bold" align="right" class="enter">Логин
+                <h4 style="bottom:50px;color: #c68a4a; font-weight: bold" align="right" class="enter">Логин
                     пользователя: ${user.login}</h4>
             </div>
         </sec:authorize>
