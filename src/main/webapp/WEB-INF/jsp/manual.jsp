@@ -42,9 +42,11 @@
                         <br>2. Моя статистика;</br>
                         3. Общая статистика;
                         </br>4. Тренировка;
-                        </br>5. Информация о программе;
+                        </br>5. Руководство пользователя;
                         </br>6. Выход.
                     </h4>
+                    <div style="background-image: url(../../resources/images/A1.png);background-size: contain;background-position:center;width:900px; height:490px;" ></div>
+
                     <h4 style="color:#c68a4a;">
                         <br>
                         Также на данной странице отображается логин пользователя и его текущий уровень.
@@ -55,6 +57,8 @@
                         <br> Помимо этого, на данной странице находятся кнопки «Сохранить» и «Главная страница».
 
                     </h4>
+                    <div style="background-image: url(../../resources/images/A2.jpg);background-size: contain;background-position:center;width:900px; height:490px;" ></div>
+
                     <h4 style="color:#c68a4a;">
                         <br>
                         При нажатии на кнопку «Моя статистика» появляется страница, представленная на рисунке 3.
@@ -69,6 +73,8 @@
                         <br> 6. Количество ошибок;
                         <br> 7. Статус.
                     </h4>
+                    <div style="background-image: url(../../resources/images/A3.jpg);background-size: contain;background-position:center;width:900px; height:490px;" ></div>
+
                     <h4 style="color:#c68a4a;">
                         <br>
                         Также на данной станице отображается логин и уровень пользователя.
@@ -84,6 +90,8 @@
                         <br>7. Статус.
 
                     </h4>
+                    <div style="background-image: url(../../resources/images/A4.jpg);background-size: contain;background-position:center;width:900px; height:450px;" ></div>
+
                     <h4 style="color:#c68a4a;">
                         <br>
                         Также на данной странице отображаются диаграмма скорости печати, логин пользователя и список
@@ -95,16 +103,27 @@
                         <br> На данной странице пользователю доступны выбор уровня сложности и выбор упражнения.
                         <br> Также на данной странице отображается логин и уровень пользователя.
                     </h4>
+                    <div style="background-image: url(../../resources/images/A5.jpg);background-size: contain;background-position:center;width:900px; height:490px;" ></div>
 
                     <h4 style="color:#c68a4a;">
                         <br>
                         При нажатии на кнопку «Начать тренировку» отображается страница, представленная на рисунке 6.
+                        <br> На данной странице пользователю предоставляется возможность использовать виртуальную клавиатуру
+                        <br>для прохождения упражнения.
+                        <br> Также на данной странице отображается логин, уровень пользователя, количество ошибок
+                        <br>и среднняя скорость печати.
+                        <br>Также с этой страницы можно перейти на страничку с настройками тренировки или начать тренировку заново.
+                    </h4>
+                    <div style="background-image: url(../../resources/images/A6.jpg);background-size: contain;background-position:center;width:900px; height:490px;" ></div>
+                    <h4 style="color:#c68a4a;">
+                        <br>
+                        При успешном прохождении упражнения или достижении максимального количества ошибок происходит переход на страницу «Результат»,
+                        <br>  представленную на рисунке 55, где отображается средняя скорость печати, количество совершенных ошибок и статус прохождения упражнения.
+                        <br>  С этой страницы можно перейти на страницу параметров тренировки либо на страницу тренировки для повторного прохождения.
 
                     </h4>
+                    <div style="background-image: url(../../resources/images/A7.jpg);background-size: contain;background-position:center;width:900px; height:490px;" ></div>
 
-                    <div>
-                        <img src="/A1.jpg" width="200" height="200">
-                    </div>
                 </div>
 
                 <div style="height:30px"></div>
