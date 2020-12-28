@@ -161,7 +161,7 @@
 
                 <div>
 
-                    <a style="" class="gradient-btn" href="/about">
+                    <a style="" class="gradient-btn" href="/user/manual">
                         &nbsp&nbsp&nbsp&nbsp Информация
                         о программе &nbsp&nbsp&nbsp&nbsp</a>
                 </div>

@@ -29,7 +29,7 @@ public class StatisticsService {
         int count = 0;
         List<Statistics> list = (List<Statistics>) statisticRepos.findAll();
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getAverageSpeed() < less)
+            if (list.get(i).getAverageSpeed() <= less)
                 count++;
         }
 
@@ -40,7 +40,7 @@ public class StatisticsService {
         int count = 0;
         List<Statistics> list = (List<Statistics>) statisticRepos.findAll();
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i).getAverageSpeed() < less && list.get(i).getAverageSpeed() > more)
+            if (list.get(i).getAverageSpeed() <= less && list.get(i).getAverageSpeed() > more)
                 count++;
         }
         return count;

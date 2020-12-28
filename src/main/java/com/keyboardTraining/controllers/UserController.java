@@ -137,6 +137,11 @@ public class UserController {
         return "userStats";
     }
 
+    @GetMapping("/user/manual")
+    public String getManual() {
+        return "manual";
+    }
+
     @PostMapping("/user/editProfile/error")
     public String postEditProfileError(@RequestParam String login, @RequestParam String password, @RequestParam String passwordConfirm, @RequestParam String id) {
         if (password.equals(passwordConfirm)) {
